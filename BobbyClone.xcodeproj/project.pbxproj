@@ -7,16 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592B99C02763C59700ACF752 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99BF2763C59700ACF752 /* Subscription.swift */; };
+		592B99C22763D48400ACF752 /* SubscriptionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C12763D48400ACF752 /* SubscriptionCategory.swift */; };
+		592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C72763D56100ACF752 /* TimeUnit.swift */; };
+		592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */; };
+		592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */; };
+		592B99CE2763E43F00ACF752 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CD2763E43F00ACF752 /* Data.swift */; };
 		5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357D2763698300619C49 /* BobbyCloneApp.swift */; };
-		597235802763698300619C49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357F2763698300619C49 /* ContentView.swift */; };
+		597235802763698300619C49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357F2763698300619C49 /* HomeView.swift */; };
 		597235822763698300619C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235812763698300619C49 /* Assets.xcassets */; };
 		597235852763698300619C49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235842763698300619C49 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592B99BE2763C50C00ACF752 /* NilWhenEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilWhenEmpty.swift; sourceTree = "<group>"; };
+		592B99BF2763C59700ACF752 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		592B99C12763D48400ACF752 /* SubscriptionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCategory.swift; sourceTree = "<group>"; };
+		592B99C72763D56100ACF752 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
+		592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFromHexadecimal.swift; sourceTree = "<group>"; };
+		592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTemplate.swift; sourceTree = "<group>"; };
+		592B99CD2763E43F00ACF752 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5972357A2763698300619C49 /* BobbyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobbyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5972357D2763698300619C49 /* BobbyCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbyCloneApp.swift; sourceTree = "<group>"; };
-		5972357F2763698300619C49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5972357F2763698300619C49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		597235812763698300619C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		597235842763698300619C49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +45,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		592B99BA2763C3D300ACF752 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				592B99BF2763C59700ACF752 /* Subscription.swift */,
+				592B99C12763D48400ACF752 /* SubscriptionCategory.swift */,
+				592B99C72763D56100ACF752 /* TimeUnit.swift */,
+				592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		592B99BB2763C4EA00ACF752 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				59CCC3742763FFC00092CB73 /* Home */,
+				59CCC379276400DF0092CB73 /* SubscriptionTemplate */,
+				59CCC377276400040092CB73 /* SubscriptionForm */,
+				59CCC3752763FFD80092CB73 /* Settings */,
+				59CCC3762763FFE90092CB73 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		592B99BC2763C4F000ACF752 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				592B99CD2763E43F00ACF752 /* Data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		592B99BD2763C4F600ACF752 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				592B99BE2763C50C00ACF752 /* NilWhenEmpty.swift */,
+				592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		597235712763698300619C49 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				5972357D2763698300619C49 /* BobbyCloneApp.swift */,
-				5972357F2763698300619C49 /* ContentView.swift */,
+				592B99BB2763C4EA00ACF752 /* Views */,
+				592B99BA2763C3D300ACF752 /* Entities */,
+				592B99BC2763C4F000ACF752 /* Data */,
+				592B99BD2763C4F600ACF752 /* Extensions */,
 				597235812763698300619C49 /* Assets.xcassets */,
 				597235832763698300619C49 /* Preview Content */,
 			);
@@ -65,6 +121,42 @@
 				597235842763698300619C49 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59CCC3742763FFC00092CB73 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5972357F2763698300619C49 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		59CCC3752763FFD80092CB73 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		59CCC3762763FFE90092CB73 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		59CCC377276400040092CB73 /* SubscriptionForm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubscriptionForm;
+			sourceTree = "<group>";
+		};
+		59CCC379276400DF0092CB73 /* SubscriptionTemplate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubscriptionTemplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597235802763698300619C49 /* ContentView.swift in Sources */,
+				592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */,
+				592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */,
+				592B99C22763D48400ACF752 /* SubscriptionCategory.swift in Sources */,
+				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
+				597235802763698300619C49 /* HomeView.swift in Sources */,
+				592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */,
 				5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */,
+				592B99CE2763E43F00ACF752 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
