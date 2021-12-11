@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var subscription: Subscription = fakeSubscriptions[0]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Tous les \(subscription.billingCycleNumber) \(subscription.billingCycleTimeUnit.rawValue)")
+            Text(subscription.firstBilling!, style: .date)
+            Text(subscription.nextBilling!, style: .date)
+        }
     }
 }
 

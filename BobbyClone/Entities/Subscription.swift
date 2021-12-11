@@ -5,6 +5,7 @@
 //  Created by Antoine De Roose on 10/12/2021.
 //
 //  DateComponents: https://www.appsdeveloperblog.com/add-days-months-years-to-current-date-in-swift/
+//  Calendar byAdding nil: https://stackoverflow.com/questions/39358131/when-does-datebyaddingcomponentstodateoptions-return-nil
 
 import Foundation
 import SwiftUI
@@ -30,13 +31,12 @@ class Subscription: Identifiable {
     }
     
     var nextBilling: Date? {
-        guard let firstBilling = firstBilling else { return nil }
+        guard let firstBilling = firstBilling?.startOfDay else { return nil }
         var nextDate = firstBilling
         let dateComponent = initDateComponent()
-        //TODO: ne tenir compte que des dates, pas du temps
-        while nextDate < Date() {
-            let calculated = Calendar.current.date(byAdding: dateComponent, to: nextDate)
-            guard let calculated = calculated else { return nil }
+        guard let currentDate = Date().startOfDay else { return nil }
+        while nextDate < currentDate {
+            guard let calculated = Calendar.current.date(byAdding: dateComponent, to: nextDate) else { return nil }
             nextDate = calculated
         }
         return nextDate

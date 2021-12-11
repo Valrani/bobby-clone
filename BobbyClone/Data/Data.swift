@@ -20,3 +20,7 @@ let templates = [
     SubscriptionTemplate(name: "Telenet", iconString: "face.smiling.fill", colorHexa: "#FFE700", isPopular: false),
     SubscriptionTemplate(name: "Google Drive", iconString: "icloud.fill", colorHexa: "#FFFFFF", isPopular: true)
 ]
+
+let fakeSubscriptions = [
+    Subscription(name: "PS+", price: 50, iconString: "plus", colorHexa: "#00A1FF", firstBilling: Date(timeIntervalSince1970: 1577860560), billingCycleNumber: 1, billingCycleTimeUnit: .month)
+]
