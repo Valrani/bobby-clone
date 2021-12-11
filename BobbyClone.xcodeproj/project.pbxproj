@@ -13,14 +13,15 @@
 		592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */; };
 		592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */; };
 		592B99CE2763E43F00ACF752 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CD2763E43F00ACF752 /* Data.swift */; };
+		596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09627651D3400AA0BB6 /* SettingsView.swift */; };
+		596AC09927651DFD00AA0BB6 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09827651DFD00AA0BB6 /* CategoriesView.swift */; };
+		596AC09B27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09A27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift */; };
+		596AC09D276530C400AA0BB6 /* SubscriptionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */; };
 		5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357D2763698300619C49 /* BobbyCloneApp.swift */; };
 		597235802763698300619C49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357F2763698300619C49 /* HomeView.swift */; };
 		597235822763698300619C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235812763698300619C49 /* Assets.xcassets */; };
 		597235852763698300619C49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235842763698300619C49 /* Preview Assets.xcassets */; };
-		59723592276411B100619C49 /* Placeholder1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59723591276411B100619C49 /* Placeholder1.swift */; };
 		59723594276411BA00619C49 /* Placeholder2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59723593276411BA00619C49 /* Placeholder2.swift */; };
-		59723596276411D500619C49 /* Placeholder3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59723595276411D500619C49 /* Placeholder3.swift */; };
-		59723598276411DF00619C49 /* Placeholder4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59723597276411DF00619C49 /* Placeholder4.swift */; };
 		59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,15 +33,16 @@
 		592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFromHexadecimal.swift; sourceTree = "<group>"; };
 		592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTemplate.swift; sourceTree = "<group>"; };
 		592B99CD2763E43F00ACF752 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		596AC09627651D3400AA0BB6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		596AC09827651DFD00AA0BB6 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		596AC09A27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTemplatesView.swift; sourceTree = "<group>"; };
+		596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCellView.swift; sourceTree = "<group>"; };
 		5972357A2763698300619C49 /* BobbyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobbyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5972357D2763698300619C49 /* BobbyCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbyCloneApp.swift; sourceTree = "<group>"; };
 		5972357F2763698300619C49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		597235812763698300619C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		597235842763698300619C49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		59723591276411B100619C49 /* Placeholder1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder1.swift; sourceTree = "<group>"; };
 		59723593276411BA00619C49 /* Placeholder2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder2.swift; sourceTree = "<group>"; };
-		59723595276411D500619C49 /* Placeholder3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder3.swift; sourceTree = "<group>"; };
-		59723597276411DF00619C49 /* Placeholder4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder4.swift; sourceTree = "<group>"; };
 		59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStartOfDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				59CCC3742763FFC00092CB73 /* Home */,
-				5972358D2764113A00619C49 /* SubscriptionTemplate */,
+				5972358D2764113A00619C49 /* SubscriptionTemplates */,
 				5972358E2764116100619C49 /* SubscriptionForm */,
 				5972358F2764117200619C49 /* Settings */,
 				597235902764117900619C49 /* Shared */,
@@ -134,12 +136,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5972358D2764113A00619C49 /* SubscriptionTemplate */ = {
+		5972358D2764113A00619C49 /* SubscriptionTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				59723591276411B100619C49 /* Placeholder1.swift */,
+				596AC09A27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift */,
 			);
-			path = SubscriptionTemplate;
+			path = SubscriptionTemplates;
 			sourceTree = "<group>";
 		};
 		5972358E2764116100619C49 /* SubscriptionForm */ = {
@@ -153,7 +155,7 @@
 		5972358F2764117200619C49 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				59723595276411D500619C49 /* Placeholder3.swift */,
+				596AC09627651D3400AA0BB6 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -161,7 +163,7 @@
 		597235902764117900619C49 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				59723597276411DF00619C49 /* Placeholder4.swift */,
+				596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				5972357F2763698300619C49 /* HomeView.swift */,
+				596AC09827651DFD00AA0BB6 /* CategoriesView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596AC09B27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift in Sources */,
 				59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */,
 				592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */,
 				59723594276411BA00619C49 /* Placeholder2.swift in Sources */,
@@ -251,12 +255,12 @@
 				592B99C22763D48400ACF752 /* SubscriptionCategory.swift in Sources */,
 				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
 				597235802763698300619C49 /* HomeView.swift in Sources */,
+				596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */,
+				596AC09927651DFD00AA0BB6 /* CategoriesView.swift in Sources */,
 				592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */,
 				5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */,
-				59723596276411D500619C49 /* Placeholder3.swift in Sources */,
+				596AC09D276530C400AA0BB6 /* SubscriptionCellView.swift in Sources */,
 				592B99CE2763E43F00ACF752 /* Data.swift in Sources */,
-				59723592276411B100619C49 /* Placeholder1.swift in Sources */,
-				59723598276411DF00619C49 /* Placeholder4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
