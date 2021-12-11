@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 
+    @ObservedObject var subscriptionLibrary: SubscriptionLibrary
     @State private var isShowingSettingsSheet = false
     @State private var isShowingCategoriesSheet = false
     @State private var isShowingSubscriptionTemplatesSheet = false
@@ -71,8 +72,8 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    @StateObject static var subscriptionLibrary = SubscriptionLibrary()
     static var previews: some View {
-        HomeView()
-            
+        HomeView(subscriptionLibrary: subscriptionLibrary)
     }
 }

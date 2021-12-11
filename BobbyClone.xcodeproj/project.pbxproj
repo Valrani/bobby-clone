@@ -12,11 +12,12 @@
 		592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C72763D56100ACF752 /* TimeUnit.swift */; };
 		592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */; };
 		592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */; };
-		592B99CE2763E43F00ACF752 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CD2763E43F00ACF752 /* Data.swift */; };
 		596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09627651D3400AA0BB6 /* SettingsView.swift */; };
 		596AC09927651DFD00AA0BB6 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09827651DFD00AA0BB6 /* CategoriesView.swift */; };
 		596AC09B27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09A27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift */; };
 		596AC09D276530C400AA0BB6 /* SubscriptionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */; };
+		596AC09F2765326B00AA0BB6 /* TemplateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09E2765326B00AA0BB6 /* TemplateLibrary.swift */; };
+		596AC0A12765327C00AA0BB6 /* SubscriptionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC0A02765327C00AA0BB6 /* SubscriptionLibrary.swift */; };
 		5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357D2763698300619C49 /* BobbyCloneApp.swift */; };
 		597235802763698300619C49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357F2763698300619C49 /* HomeView.swift */; };
 		597235822763698300619C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235812763698300619C49 /* Assets.xcassets */; };
@@ -32,11 +33,12 @@
 		592B99C72763D56100ACF752 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
 		592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFromHexadecimal.swift; sourceTree = "<group>"; };
 		592B99CB2763E25D00ACF752 /* SubscriptionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTemplate.swift; sourceTree = "<group>"; };
-		592B99CD2763E43F00ACF752 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		596AC09627651D3400AA0BB6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		596AC09827651DFD00AA0BB6 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		596AC09A27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTemplatesView.swift; sourceTree = "<group>"; };
 		596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCellView.swift; sourceTree = "<group>"; };
+		596AC09E2765326B00AA0BB6 /* TemplateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateLibrary.swift; sourceTree = "<group>"; };
+		596AC0A02765327C00AA0BB6 /* SubscriptionLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionLibrary.swift; sourceTree = "<group>"; };
 		5972357A2763698300619C49 /* BobbyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobbyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5972357D2763698300619C49 /* BobbyCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbyCloneApp.swift; sourceTree = "<group>"; };
 		5972357F2763698300619C49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -83,7 +85,8 @@
 		592B99BC2763C4F000ACF752 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				592B99CD2763E43F00ACF752 /* Data.swift */,
+				596AC0A02765327C00AA0BB6 /* SubscriptionLibrary.swift */,
+				596AC09E2765326B00AA0BB6 /* TemplateLibrary.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */,
 				592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */,
 				59723594276411BA00619C49 /* Placeholder2.swift in Sources */,
+				596AC09F2765326B00AA0BB6 /* TemplateLibrary.swift in Sources */,
 				592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */,
 				592B99C22763D48400ACF752 /* SubscriptionCategory.swift in Sources */,
 				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
@@ -260,7 +264,7 @@
 				592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */,
 				5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */,
 				596AC09D276530C400AA0BB6 /* SubscriptionCellView.swift in Sources */,
-				592B99CE2763E43F00ACF752 /* Data.swift in Sources */,
+				596AC0A12765327C00AA0BB6 /* SubscriptionLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

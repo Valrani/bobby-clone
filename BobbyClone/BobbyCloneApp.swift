@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BobbyCloneApp: App {
+    
+    @StateObject var subscriptionLibrary = SubscriptionLibrary()
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(subscriptionLibrary: subscriptionLibrary)
         }
     }
 }

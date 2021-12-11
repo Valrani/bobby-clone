@@ -10,21 +10,17 @@
 import Foundation
 import SwiftUI
 
-class Subscription: Identifiable {
+class Subscription: Identifiable, ObservableObject {
     
     let id: String
-    var name: String
-    var description: String?
-    var price: Double
-    var iconString: String
-    var colorHexa: String
-    var firstBilling: Date?
-    var billingCycleNumber: Int
-    var billingCycleTimeUnit: TimeUnit
-    
-    var icon: Image {
-        return Image(systemName: iconString)
-    }
+    @Published var name: String
+    @Published var description: String?
+    @Published var price: Double
+    @Published var iconString: String
+    @Published var colorHexa: String
+    @Published var firstBilling: Date?
+    @Published var billingCycleNumber: Int
+    @Published var billingCycleTimeUnit: TimeUnit
     
     var color: Color {
         return Color(colorHexa)
