@@ -30,6 +30,8 @@ class Subscription: Identifiable {
         return Color(colorHexa)
     }
     
+    /// Returns next billing, based on first billing.
+    /// If it's today, returns today instead.
     var nextBilling: Date? {
         guard let firstBilling = firstBilling?.startOfDay else { return nil }
         var nextDate = firstBilling
@@ -60,7 +62,7 @@ class Subscription: Identifiable {
         case .day:
             dateComponent.day = billingCycleNumber
         case .week:
-            dateComponent.weekday = billingCycleNumber
+            dateComponent.weekOfYear = billingCycleNumber
         case .month:
             dateComponent.month = billingCycleNumber
         case .year:
