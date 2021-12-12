@@ -13,7 +13,7 @@ struct HomeBottomDetailView: View {
     let averageExpenses: Double
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             LineSeparator()
             HStack {
                 Text("\(numberOfSubscriptions) abonnements")
@@ -24,8 +24,7 @@ struct HomeBottomDetailView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-            .padding(.horizontal)
-            .padding(.bottom, 8)
+            .padding()
         }
     }
 }

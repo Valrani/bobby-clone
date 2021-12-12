@@ -17,6 +17,7 @@ struct HomeBottomView: View {
         VStack(spacing: 0) {
             if isShowingDetailView {
                 HomeBottomDetailView(numberOfSubscriptions: subscriptionLibrary.allSubscriptions.count, averageExpenses: 0)
+                    .transition(.move(edge: .bottom))
             }
             LineSeparator()
             HStack {
@@ -40,6 +41,7 @@ struct HomeBottomView: View {
                         .padding(20)
                 }
             }
+            .background(.background)
         }
     }
     
@@ -50,7 +52,9 @@ struct HomeBottomView: View {
     }
     
     private func toggleDetailView() {
-        isShowingDetailView.toggle()
+        withAnimation {
+            isShowingDetailView.toggle()
+        }
     }
     
     private func displayTimeUnitText() -> String {
