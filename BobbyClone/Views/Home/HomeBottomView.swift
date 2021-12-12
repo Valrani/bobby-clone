@@ -16,14 +16,14 @@ struct HomeBottomView: View {
   var body: some View {
     VStack(spacing: 0) {
       if isShowingDetailView {
-        HomeBottomDetailView(numberOfSubscriptions: subscriptionLibrary.allSubscriptions.count, averageExpenses: 0)
+        HomeBottomDetailView(numberOfSubscriptions: subscriptionLibrary.allSubscriptions.count, averageExpenses: calculateAverageExpenses())
           .transition(.move(edge: .bottom))
       }
       LineSeparator()
       HStack {
         Button(action: changeDisplayMode) {
           VStack(alignment: .leading) {
-            Text("Dépenses moyennes")
+            Text("Dépenses Moyennes")
               .foregroundColor(.primary)
               .font(.headline)
             Text(displayTimeUnitText())
@@ -33,12 +33,11 @@ struct HomeBottomView: View {
           .padding()
         }
         Spacer()
-        
         Button(action: toggleDetailView) {
-          Text("\(displayAverageExpenses(), specifier: "%.2f") €")
+          Text("\(calculateAverageExpenses(), specifier: "%.2f") €")
             .font(.headline)
             .foregroundColor(.secondary)
-            .padding(20)
+            .padding()
         }
       }
       .background(.background)
@@ -63,7 +62,7 @@ struct HomeBottomView: View {
     return "PAR ANNÉE"
   }
   
-  private func displayAverageExpenses() -> Double {
+  private func calculateAverageExpenses() -> Double {
     guard !subscriptionLibrary.allSubscriptions.isEmpty else { return 0 }
     var averageExpensesPerWeek = 0.00
     for subscription in subscriptionLibrary.allSubscriptions {

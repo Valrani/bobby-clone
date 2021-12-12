@@ -14,40 +14,42 @@ struct HomeTopView: View {
   @State private var isShowingSubscriptionTemplatesSheet = false
   
   var body: some View {
-    HStack {
-      Button(action: showSettingsSheet) {
-        Image(systemName: "gearshape")
-          .font(Font.title3.weight(.bold))
-          .foregroundColor(.secondary)
-      }
-      .sheet(isPresented: $isShowingSettingsSheet) {
-        SettingsView()
-      }
-      Spacer()
-      Button(action: showCategoriesSheet) {
-        HStack {
-          Text("Toutes les souscriptions")
-            .fontWeight(.bold)
-          Image(systemName: "chevron.down")
-            .font(Font.caption2.weight(.bold))
+    VStack(spacing: 0) {
+      HStack {
+        Button(action: showSettingsSheet) {
+          Image(systemName: "gearshape")
+            .font(Font.title3.weight(.bold))
+            .foregroundColor(.secondary)
         }
-        .foregroundColor(.primary)
+        .sheet(isPresented: $isShowingSettingsSheet) {
+          SettingsView()
+        }
+        Spacer()
+        Button(action: showCategoriesSheet) {
+          HStack {
+            Text("Toutes les souscriptions")
+              .fontWeight(.bold)
+            Image(systemName: "chevron.down")
+              .font(Font.caption.weight(.bold))
+          }
+          .foregroundColor(.primary)
+        }
+        .sheet(isPresented: $isShowingCategoriesSheet) {
+          CategoriesView()
+        }
+        Spacer()
+        Button(action: showSubscriptionTemplatesSheet) {
+          Image(systemName: "plus")
+            .font(Font.title3.weight(.bold))
+            .foregroundColor(.secondary)
+        }
+        .sheet(isPresented: $isShowingSubscriptionTemplatesSheet) {
+          SubscriptionTemplatesView()
+        }
       }
-      .sheet(isPresented: $isShowingCategoriesSheet) {
-        CategoriesView()
-      }
-      Spacer()
-      Button(action: showSubscriptionTemplatesSheet) {
-        Image(systemName: "plus")
-          .font(Font.title3.weight(.bold))
-          .foregroundColor(.secondary)
-      }
-      .sheet(isPresented: $isShowingSubscriptionTemplatesSheet) {
-        SubscriptionTemplatesView()
-      }
-      
+      .padding()
+      LineSeparator()
     }
-    .padding()
   }
   
   private func showSettingsSheet() {

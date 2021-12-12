@@ -13,13 +13,14 @@ struct HomeView: View {
   
   var body: some View {
     NavigationView {
-      VStack {
+      VStack(spacing: 0) {
         HomeTopView()
         ScrollView {
           ForEach(subscriptionLibrary.allSubscriptions) { subscription in
             SubscriptionCellView(subscription: subscription)
               .padding(.bottom, 3)
           }
+          .padding(.vertical, 8)
         }
         HomeBottomView(subscriptionLibrary: subscriptionLibrary)
       }
