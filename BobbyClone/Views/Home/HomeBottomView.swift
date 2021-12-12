@@ -14,10 +14,11 @@ struct HomeBottomView: View {
     @State private var isShowingDetailView = false
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             if isShowingDetailView {
-                HomeBottomDetailView()
+                HomeBottomDetailView(numberOfSubscriptions: subscriptionLibrary.allSubscriptions.count, averageExpenses: 0)
             }
+            LineSeparator()
             HStack {
                 Button(action: changeDisplayMode) {
                     VStack(alignment: .leading) {
@@ -39,7 +40,6 @@ struct HomeBottomView: View {
                         .padding(20)
                 }
             }
-            .background(.background)
         }
     }
     

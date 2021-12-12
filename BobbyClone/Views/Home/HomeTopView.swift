@@ -48,7 +48,6 @@ struct HomeTopView: View {
             
         }
         .padding()
-        .background(.background)
     }
     
     private func showSettingsSheet() {

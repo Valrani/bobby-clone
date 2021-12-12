@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct HomeBottomDetailView: View {
+    
+    let numberOfSubscriptions: Int
+    let averageExpenses: Double
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            LineSeparator()
+            HStack {
+                Text("\(numberOfSubscriptions) abonnements")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Spacer()
+                Text("\(averageExpenses, specifier: "%.2f") €")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 8)
+        }
     }
 }
 
 struct HomeBottomDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBottomDetailView()
+        Group {
+            HomeBottomDetailView(numberOfSubscriptions: 0, averageExpenses: 99.99)
+            HomeBottomDetailView(numberOfSubscriptions: 1, averageExpenses: 19.00)
+            HomeBottomDetailView(numberOfSubscriptions: 8, averageExpenses: 50)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }
