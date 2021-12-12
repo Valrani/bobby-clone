@@ -23,6 +23,8 @@
 		597235822763698300619C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235812763698300619C49 /* Assets.xcassets */; };
 		597235852763698300619C49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235842763698300619C49 /* Preview Assets.xcassets */; };
 		59723594276411BA00619C49 /* Placeholder2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59723593276411BA00619C49 /* Placeholder2.swift */; };
+		59A7351E27663C6D00463498 /* HomeBottomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7351D27663C6D00463498 /* HomeBottomDetailView.swift */; };
+		59A735212766645500463498 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A735202766645500463498 /* Constants.swift */; };
 		59C33BE0276620AA00CD00E0 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C33BDF276620AA00CD00E0 /* HomeTopView.swift */; };
 		59C33BE2276620B000CD00E0 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C33BE1276620B000CD00E0 /* HomeBottomView.swift */; };
 		59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */; };
@@ -47,6 +49,8 @@
 		597235812763698300619C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		597235842763698300619C49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		59723593276411BA00619C49 /* Placeholder2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder2.swift; sourceTree = "<group>"; };
+		59A7351D27663C6D00463498 /* HomeBottomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomDetailView.swift; sourceTree = "<group>"; };
+		59A735202766645500463498 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59C33BDF276620AA00CD00E0 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
 		59C33BE1276620B000CD00E0 /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStartOfDay.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				592B99BB2763C4EA00ACF752 /* Views */,
 				592B99BA2763C3D300ACF752 /* Entities */,
 				592B99BC2763C4F000ACF752 /* Data */,
+				59A7351F2766644400463498 /* Constants */,
 				592B99BD2763C4F600ACF752 /* Extensions */,
 				597235812763698300619C49 /* Assets.xcassets */,
 				597235832763698300619C49 /* Preview Content */,
@@ -166,12 +171,21 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		59A7351F2766644400463498 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				59A735202766645500463498 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		59CCC3742763FFC00092CB73 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				5972357F2763698300619C49 /* HomeView.swift */,
 				59C33BDF276620AA00CD00E0 /* HomeTopView.swift */,
 				59C33BE1276620B000CD00E0 /* HomeBottomView.swift */,
+				59A7351D27663C6D00463498 /* HomeBottomDetailView.swift */,
 				596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */,
 				596AC09827651DFD00AA0BB6 /* CategoriesView.swift */,
 			);
@@ -249,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C33BE2276620B000CD00E0 /* HomeBottomView.swift in Sources */,
+				59A735212766645500463498 /* Constants.swift in Sources */,
 				596AC09B27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift in Sources */,
 				59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */,
 				592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */,
@@ -259,6 +274,7 @@
 				592B99C22763D48400ACF752 /* SubscriptionCategory.swift in Sources */,
 				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
 				597235802763698300619C49 /* HomeView.swift in Sources */,
+				59A7351E27663C6D00463498 /* HomeBottomDetailView.swift in Sources */,
 				596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */,
 				596AC09927651DFD00AA0BB6 /* CategoriesView.swift in Sources */,
 				592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */,

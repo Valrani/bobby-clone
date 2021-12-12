@@ -36,6 +36,20 @@ class Subscription: Identifiable, ObservableObject {
         return nextDate
     }
     
+    /// Returns the average price per week.
+    var pricePerWeek: Double {
+        switch billingCycleTimeUnit {
+        case .day:
+            return price / Double(billingCycleNumber)
+        case .week:
+            return (price * 7) / Double(billingCycleNumber)
+        case .month:
+            return (price / K.weeksInAMonth) / Double(billingCycleNumber)
+        case .year:
+            return (price / K.weeksInAYear) / Double(billingCycleNumber)
+        }
+    }
+    
     var nextBillingString: String? {
         guard let nextBilling = nextBilling else { return nil }
         let formatter = DateFormatter()

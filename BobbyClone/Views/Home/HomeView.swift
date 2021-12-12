@@ -21,7 +21,7 @@ struct HomeView: View {
                             .padding(.bottom, 3)
                     }
                 }
-                HomeBottomView()
+                HomeBottomView(subscriptionLibrary: subscriptionLibrary)
             }
             .navigationBarHidden(true)
         }

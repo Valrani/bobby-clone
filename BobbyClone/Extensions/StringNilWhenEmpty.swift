@@ -9,7 +9,7 @@ import Foundation
 
 extension Optional where Wrapped == String {
     
-    /// Returns nil if the value is an empty String
+    /// Returns nil if the value is an empty String.
     var nilWhenEmpty: String? {
         if let value = self {
             return value.isEmpty ? nil : value

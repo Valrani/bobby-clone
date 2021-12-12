@@ -16,15 +16,6 @@ class SubscriptionLibrary: ObservableObject {
         Subscription(name: "PS+", price: 50, iconString: "plus", colorHexa: "#00A1FF", firstBilling: _2020_01_01, billingCycleNumber: 1, billingCycleTimeUnit: .year),
         Subscription(name: "Notion", price: 4, iconString: "questionmark.square", colorHexa: "#B0B0B0", firstBilling: _2021_12_08, billingCycleNumber: 1, billingCycleTimeUnit: .month),
         Subscription(name: "Netflix", price: 9.99, iconString: "n.circle", colorHexa: "#FF3535", billingCycleNumber: 1, billingCycleTimeUnit: .month),
-        Subscription(name: "PS+", price: 50, iconString: "plus", colorHexa: "#00A1FF", firstBilling: _2020_01_01, billingCycleNumber: 1, billingCycleTimeUnit: .year),
-        Subscription(name: "Notion", price: 4, iconString: "questionmark.square", colorHexa: "#B0B0B0", firstBilling: _2021_12_08, billingCycleNumber: 1, billingCycleTimeUnit: .month),
-        Subscription(name: "Netflix", price: 9.99, iconString: "n.circle", colorHexa: "#FF3535", billingCycleNumber: 1, billingCycleTimeUnit: .month),
-        Subscription(name: "PS+", price: 50, iconString: "plus", colorHexa: "#00A1FF", firstBilling: _2020_01_01, billingCycleNumber: 1, billingCycleTimeUnit: .year),
-        Subscription(name: "Notion", price: 4, iconString: "questionmark.square", colorHexa: "#B0B0B0", firstBilling: _2021_12_08, billingCycleNumber: 1, billingCycleTimeUnit: .month),
-        Subscription(name: "Netflix", price: 9.99, iconString: "n.circle", colorHexa: "#FF3535", billingCycleNumber: 1, billingCycleTimeUnit: .month),
-        Subscription(name: "PS+", price: 50, iconString: "plus", colorHexa: "#00A1FF", firstBilling: _2020_01_01, billingCycleNumber: 1, billingCycleTimeUnit: .year),
-        Subscription(name: "Notion", price: 4, iconString: "questionmark.square", colorHexa: "#B0B0B0", firstBilling: _2021_12_08, billingCycleNumber: 1, billingCycleTimeUnit: .month),
-        Subscription(name: "Netflix", price: 9.99, iconString: "n.circle", colorHexa: "#FF3535", billingCycleNumber: 1, billingCycleTimeUnit: .month)
     ]
     
 }
