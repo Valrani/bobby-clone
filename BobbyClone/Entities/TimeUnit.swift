@@ -8,8 +8,8 @@
 import Foundation
 
 enum TimeUnit: String {
-    case day = "timeUnitDay"
-    case week = "timeUnitWeek"
-    case month = "timeUnitMonth"
-    case year = "timeUnitYear"
+  case day = "timeUnitDay"
+  case week = "timeUnitWeek"
+  case month = "timeUnitMonth"
+  case year = "timeUnitYear"
 }

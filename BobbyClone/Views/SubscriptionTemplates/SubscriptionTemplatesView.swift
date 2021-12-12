@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SubscriptionTemplatesView: View {
-    var body: some View {
-        Text("Subscription Templates")
-    }
+  var body: some View {
+    Text("Subscription Templates")
+  }
 }
 
 struct SubscriptionTemplatesView_Previews: PreviewProvider {
-    static var previews: some View {
-        SubscriptionTemplatesView()
-    }
+  static var previews: some View {
+    SubscriptionTemplatesView()
+  }
 }

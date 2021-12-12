@@ -11,77 +11,77 @@ import Foundation
 import SwiftUI
 
 class Subscription: Identifiable, ObservableObject {
-    
-    let id: String
-    @Published var name: String
-    @Published var description: String?
-    @Published var price: Double
-    @Published var iconString: String
-    @Published var colorHexa: String
-    @Published var firstBilling: Date?
-    @Published var billingCycleNumber: Int
-    @Published var billingCycleTimeUnit: TimeUnit
-    
-    /// Returns next billing, based on first billing.
-    /// If it's today, returns today instead.
-    var nextBilling: Date? {
-        guard let firstBilling = firstBilling?.startOfDay else { return nil }
-        var nextDate = firstBilling
-        let dateComponent = initDateComponent()
-        guard let currentDate = Date().startOfDay else { return nil }
-        while nextDate < currentDate {
-            guard let calculated = Calendar.current.date(byAdding: dateComponent, to: nextDate) else { return nil }
-            nextDate = calculated
-        }
-        return nextDate
+  
+  let id: String
+  @Published var name: String
+  @Published var description: String?
+  @Published var price: Double
+  @Published var iconString: String
+  @Published var colorHexa: String
+  @Published var firstBilling: Date?
+  @Published var billingCycleNumber: Int
+  @Published var billingCycleTimeUnit: TimeUnit
+  
+  /// Returns next billing, based on first billing.
+  /// If it's today, returns today instead.
+  var nextBilling: Date? {
+    guard let firstBilling = firstBilling?.startOfDay else { return nil }
+    var nextDate = firstBilling
+    let dateComponent = initDateComponent()
+    guard let currentDate = Date().startOfDay else { return nil }
+    while nextDate < currentDate {
+      guard let calculated = Calendar.current.date(byAdding: dateComponent, to: nextDate) else { return nil }
+      nextDate = calculated
     }
-    
-    /// Returns the average price per week.
-    var pricePerWeek: Double {
-        switch billingCycleTimeUnit {
-        case .day:
-            return price / Double(billingCycleNumber)
-        case .week:
-            return (price * 7) / Double(billingCycleNumber)
-        case .month:
-            return (price / K.weeksInAMonth) / Double(billingCycleNumber)
-        case .year:
-            return (price / K.weeksInAYear) / Double(billingCycleNumber)
-        }
+    return nextDate
+  }
+  
+  /// Returns the average price per week.
+  var pricePerWeek: Double {
+    switch billingCycleTimeUnit {
+    case .day:
+      return price / Double(billingCycleNumber)
+    case .week:
+      return (price * 7) / Double(billingCycleNumber)
+    case .month:
+      return (price / K.weeksInAMonth) / Double(billingCycleNumber)
+    case .year:
+      return (price / K.weeksInAYear) / Double(billingCycleNumber)
     }
-    
-    var nextBillingString: String? {
-        guard let nextBilling = nextBilling else { return nil }
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter.string(from: nextBilling)
+  }
+  
+  var nextBillingString: String? {
+    guard let nextBilling = nextBilling else { return nil }
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    return formatter.string(from: nextBilling)
+  }
+  
+  init(name: String, description: String? = nil, price: Double, iconString: String, colorHexa: String, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {
+    self.id = UUID().uuidString
+    self.name = name
+    self.description = description
+    self.price = price
+    self.iconString = iconString
+    self.colorHexa = colorHexa
+    self.firstBilling = firstBilling
+    self.billingCycleNumber = billingCycleNumber
+    self.billingCycleTimeUnit = billingCycleTimeUnit
+  }
+  
+  private func initDateComponent() -> DateComponents {
+    var dateComponent = DateComponents()
+    switch billingCycleTimeUnit {
+    case .day:
+      dateComponent.day = billingCycleNumber
+    case .week:
+      dateComponent.weekOfYear = billingCycleNumber
+    case .month:
+      dateComponent.month = billingCycleNumber
+    case .year:
+      dateComponent.year = billingCycleNumber
     }
-    
-    init(name: String, description: String? = nil, price: Double, iconString: String, colorHexa: String, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {
-        self.id = UUID().uuidString
-        self.name = name
-        self.description = description
-        self.price = price
-        self.iconString = iconString
-        self.colorHexa = colorHexa
-        self.firstBilling = firstBilling
-        self.billingCycleNumber = billingCycleNumber
-        self.billingCycleTimeUnit = billingCycleTimeUnit
-    }
-    
-    private func initDateComponent() -> DateComponents {
-        var dateComponent = DateComponents()
-        switch billingCycleTimeUnit {
-        case .day:
-            dateComponent.day = billingCycleNumber
-        case .week:
-            dateComponent.weekOfYear = billingCycleNumber
-        case .month:
-            dateComponent.month = billingCycleNumber
-        case .year:
-            dateComponent.year = billingCycleNumber
-        }
-        return dateComponent;
-    }
-    
+    return dateComponent;
+  }
+  
 }
