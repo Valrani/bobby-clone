@@ -22,10 +22,6 @@ class Subscription: Identifiable, ObservableObject {
     @Published var billingCycleNumber: Int
     @Published var billingCycleTimeUnit: TimeUnit
     
-    var color: Color {
-        return Color(colorHexa)
-    }
-    
     /// Returns next billing, based on first billing.
     /// If it's today, returns today instead.
     var nextBilling: Date? {
@@ -38,6 +34,13 @@ class Subscription: Identifiable, ObservableObject {
             nextDate = calculated
         }
         return nextDate
+    }
+    
+    var nextBillingString: String? {
+        guard let nextBilling = nextBilling else { return nil }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: nextBilling)
     }
     
     init(name: String, description: String? = nil, price: Double, iconString: String, colorHexa: String, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {

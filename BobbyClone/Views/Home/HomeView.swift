@@ -8,65 +8,23 @@
 import SwiftUI
 
 struct HomeView: View {
-
+    
     @ObservedObject var subscriptionLibrary: SubscriptionLibrary
-    @State private var isShowingSettingsSheet = false
-    @State private var isShowingCategoriesSheet = false
-    @State private var isShowingSubscriptionTemplatesSheet = false
-
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                Text("Hello, World!")
+            VStack {
+                HomeTopView()
+                ScrollView {
+                    ForEach(subscriptionLibrary.allSubscriptions) { subscription in
+                        SubscriptionCellView(subscription: subscription)
+                            .padding(.bottom, 3)
+                    }
+                }
+                HomeBottomView()
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: showSettingsSheet) {
-                        Image(systemName: "gearshape")
-                            .foregroundColor(.secondary)
-                    }
-                    .sheet(isPresented: $isShowingSettingsSheet) {
-                        SettingsView()
-                    }
-                }
-                ToolbarItem(placement: .principal) {
-                    Button(action: showCategoriesSheet) {
-                        HStack {
-                            Text("Toutes les souscriptions")
-                                .fontWeight(.bold)
-                            Image(systemName: "chevron.down")
-                                .font(Font.caption2.weight(.bold))
-                        }
-                        .foregroundColor(.primary)
-                    }
-                    .sheet(isPresented: $isShowingCategoriesSheet) {
-                        CategoriesView()
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: showSubscriptionTemplatesSheet) {
-                        Image(systemName: "plus")
-                            .foregroundColor(.secondary)
-                    }
-                    .sheet(isPresented: $isShowingSubscriptionTemplatesSheet) {
-                        SubscriptionTemplatesView()
-                    }
-                }
-            }
+            .navigationBarHidden(true)
         }
-    }
-    
-    private func showSettingsSheet() {
-        isShowingSettingsSheet = true
-    }
-    
-    private func showCategoriesSheet() {
-        isShowingCategoriesSheet = true
-    }
-    
-    private func showSubscriptionTemplatesSheet() {
-        isShowingSubscriptionTemplatesSheet = true
     }
     
 }
