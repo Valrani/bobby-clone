@@ -30,6 +30,7 @@
 		59CFE5D42767B8E200886CD0 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFE5D32767B8E200886CD0 /* CustomColors.swift */; };
 		59CFE5D62767D34300886CD0 /* SubscriptionEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFE5D52767D34300886CD0 /* SubscriptionEditionView.swift */; };
 		59CFE5D82767EA2E00886CD0 /* SubscriptionEditionTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFE5D72767EA2E00886CD0 /* SubscriptionEditionTopView.swift */; };
+		59CFE5DB2767F6DB00886CD0 /* SubscriptionCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFE5DA2767F6DB00886CD0 /* SubscriptionCreationView.swift */; };
 		59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		59CFE5D32767B8E200886CD0 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		59CFE5D52767D34300886CD0 /* SubscriptionEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionEditionView.swift; sourceTree = "<group>"; };
 		59CFE5D72767EA2E00886CD0 /* SubscriptionEditionTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionEditionTopView.swift; sourceTree = "<group>"; };
+		59CFE5DA2767F6DB00886CD0 /* SubscriptionCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCreationView.swift; sourceTree = "<group>"; };
 		59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStartOfDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				59CCC3742763FFC00092CB73 /* Home */,
-				5972358D2764113A00619C49 /* SubscriptionTemplates */,
+				59CFE5D92767F6A900886CD0 /* Categories */,
+				5972358D2764113A00619C49 /* SubscriptionCreation */,
 				5972358E2764116100619C49 /* SubscriptionEdition */,
 				5972358F2764117200619C49 /* Settings */,
 				597EC3592766762E00311E79 /* Shared */,
@@ -154,12 +157,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5972358D2764113A00619C49 /* SubscriptionTemplates */ = {
+		5972358D2764113A00619C49 /* SubscriptionCreation */ = {
 			isa = PBXGroup;
 			children = (
 				596AC09A27651E2A00AA0BB6 /* SubscriptionTemplatesView.swift */,
+				59CFE5DA2767F6DB00886CD0 /* SubscriptionCreationView.swift */,
 			);
-			path = SubscriptionTemplates;
+			path = SubscriptionCreation;
 			sourceTree = "<group>";
 		};
 		5972358E2764116100619C49 /* SubscriptionEdition */ = {
@@ -204,9 +208,16 @@
 				59C33BE1276620B000CD00E0 /* HomeBottomView.swift */,
 				59A7351D27663C6D00463498 /* HomeBottomDetailView.swift */,
 				596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */,
-				596AC09827651DFD00AA0BB6 /* CategoriesView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		59CFE5D92767F6A900886CD0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				596AC09827651DFD00AA0BB6 /* CategoriesView.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */,
 				592B99C22763D48400ACF752 /* SubscriptionCategory.swift in Sources */,
 				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
+				59CFE5DB2767F6DB00886CD0 /* SubscriptionCreationView.swift in Sources */,
 				597235802763698300619C49 /* HomeView.swift in Sources */,
 				59CFE5D62767D34300886CD0 /* SubscriptionEditionView.swift in Sources */,
 				59A7351E27663C6D00463498 /* HomeBottomDetailView.swift in Sources */,
