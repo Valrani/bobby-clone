@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
   
   @EnvironmentObject var subscriptionLibrary: SubscriptionLibrary
+  @State private var isShowingSubscriptionEditionSheet: Subscription? = nil
   
   var body: some View {
     NavigationView {
@@ -18,16 +19,22 @@ struct HomeView: View {
         ScrollView {
           ForEach(subscriptionLibrary.allSubscriptions) { subscription in
             SubscriptionCellView(subscription: subscription)
-              .padding(.bottom, 3)
+              .padding(.horizontal)
+              .padding(.vertical, 2)
+              .onTapGesture {
+                isShowingSubscriptionEditionSheet = subscription
+              }
           }
-          .padding(.vertical, 8)
+          .sheet(item: $isShowingSubscriptionEditionSheet) { subscription in
+            SubscriptionEditionView(subscription: subscription)
+          }
+          .padding(.vertical, 12)
         }
         HomeBottomView()
       }
       .navigationBarHidden(true)
     }
   }
-  
 }
 
 struct HomeView_Previews: PreviewProvider {

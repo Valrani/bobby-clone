@@ -32,12 +32,11 @@ struct SubscriptionCellView: View {
     }
     .foregroundColor(.white)
     .padding(.horizontal)
-    .padding(.vertical, 12)
+    .frame(minHeight: 60)
     .background {
       RoundedRectangle(cornerRadius: 5)
         .foregroundColor(Color(hex: subscription.colorHex))
     }
-    .padding(.horizontal)
   }
 }
 
