@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeBottomView: View {
   
-  @ObservedObject var subscriptionLibrary: SubscriptionLibrary
+  @EnvironmentObject var subscriptionLibrary: SubscriptionLibrary
   @State private var displayMode: TimeUnit = .year
   @State private var isShowingDetailView = false
   
@@ -76,9 +76,9 @@ struct HomeBottomView: View {
 }
 
 struct HomeBottomView_Previews: PreviewProvider {
-  @StateObject static var subscriptionLibrary = SubscriptionLibrary()
   static var previews: some View {
-    HomeBottomView(subscriptionLibrary: subscriptionLibrary)
+    HomeBottomView()
+      .environmentObject(SubscriptionLibrary())
       .previewLayout(.sizeThatFits)
   }
 }

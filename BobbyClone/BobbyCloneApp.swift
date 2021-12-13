@@ -14,7 +14,8 @@ struct BobbyCloneApp: App {
   
   var body: some Scene {
     WindowGroup {
-      HomeView(subscriptionLibrary: subscriptionLibrary)
+      HomeView()
+        .environmentObject(subscriptionLibrary)
     }
   }
 }

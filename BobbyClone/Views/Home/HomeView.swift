@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
   
-  @ObservedObject var subscriptionLibrary: SubscriptionLibrary
+  @EnvironmentObject var subscriptionLibrary: SubscriptionLibrary
   
   var body: some View {
     NavigationView {
@@ -22,7 +22,7 @@ struct HomeView: View {
           }
           .padding(.vertical, 8)
         }
-        HomeBottomView(subscriptionLibrary: subscriptionLibrary)
+        HomeBottomView()
       }
       .navigationBarHidden(true)
     }
@@ -31,8 +31,8 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
-  @StateObject static var subscriptionLibrary = SubscriptionLibrary()
   static var previews: some View {
-    HomeView(subscriptionLibrary: subscriptionLibrary)
+    HomeView()
+      .environmentObject(SubscriptionLibrary())
   }
 }
