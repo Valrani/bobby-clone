@@ -36,11 +36,11 @@ struct HomeBottomView: View {
         Button(action: toggleDetailView) {
           Text("\(calculateAverageExpenses(), specifier: "%.2f") €")
             .font(.headline)
-            .foregroundColor(.secondary)
+            .foregroundColor(CustomColors.accentSecondary)
             .padding()
         }
       }
-      .background(.background)
+      .background(CustomColors.accentBackground)
     }
   }
   
@@ -69,8 +69,8 @@ struct HomeBottomView: View {
       averageExpensesPerWeek += subscription.pricePerWeek
     }
     if displayMode == .week { return averageExpensesPerWeek }
-    if displayMode == .month { return averageExpensesPerWeek * K.weeksInAMonth }
-    return averageExpensesPerWeek * K.weeksInAYear
+    if displayMode == .month { return averageExpensesPerWeek * Constants.weeksInAMonth }
+    return averageExpensesPerWeek * Constants.weeksInAYear
   }
   
 }

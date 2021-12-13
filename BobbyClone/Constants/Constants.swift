@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct K {
-  
-  private init() {}
-  
+enum Constants {
+
   /// Average number of weeks in a month.
   static let weeksInAMonth = 4.34524
   /// Average number of weeks in a year.
   static let weeksInAYear = 52.1429
   
 }
+

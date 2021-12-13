@@ -17,7 +17,7 @@ class Subscription: Identifiable, ObservableObject {
   @Published var description: String?
   @Published var price: Double
   @Published var iconString: String
-  @Published var colorHexa: String
+  @Published var colorHex: String
   @Published var firstBilling: Date?
   @Published var billingCycleNumber: Int
   @Published var billingCycleTimeUnit: TimeUnit
@@ -44,9 +44,9 @@ class Subscription: Identifiable, ObservableObject {
     case .week:
       return (price * 7) / Double(billingCycleNumber)
     case .month:
-      return (price / K.weeksInAMonth) / Double(billingCycleNumber)
+      return (price / Constants.weeksInAMonth) / Double(billingCycleNumber)
     case .year:
-      return (price / K.weeksInAYear) / Double(billingCycleNumber)
+      return (price / Constants.weeksInAYear) / Double(billingCycleNumber)
     }
   }
   
@@ -57,13 +57,13 @@ class Subscription: Identifiable, ObservableObject {
     return formatter.string(from: nextBilling)
   }
   
-  init(name: String, description: String? = nil, price: Double, iconString: String, colorHexa: String, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {
+  init(name: String, description: String? = nil, price: Double, iconString: String, colorHex: String, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {
     self.id = UUID().uuidString
     self.name = name
     self.description = description
     self.price = price
     self.iconString = iconString
-    self.colorHexa = colorHexa
+    self.colorHex = colorHex
     self.firstBilling = firstBilling
     self.billingCycleNumber = billingCycleNumber
     self.billingCycleTimeUnit = billingCycleTimeUnit

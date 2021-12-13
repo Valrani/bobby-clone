@@ -35,8 +35,7 @@ struct SubscriptionCellView: View {
     .padding(.vertical, 12)
     .background {
       RoundedRectangle(cornerRadius: 5)
-        .foregroundColor(Color(subscription.colorHexa))
-        .border(Color(subscription.colorHexa))
+        .foregroundColor(Color(hex: subscription.colorHex))
     }
     .padding(.horizontal)
   }

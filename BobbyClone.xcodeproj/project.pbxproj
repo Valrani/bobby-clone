@@ -28,6 +28,7 @@
 		59A735212766645500463498 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A735202766645500463498 /* Constants.swift */; };
 		59C33BE0276620AA00CD00E0 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C33BDF276620AA00CD00E0 /* HomeTopView.swift */; };
 		59C33BE2276620B000CD00E0 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C33BE1276620B000CD00E0 /* HomeBottomView.swift */; };
+		59CFE5D42767B8E200886CD0 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CFE5D32767B8E200886CD0 /* CustomColors.swift */; };
 		59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		59A735202766645500463498 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59C33BDF276620AA00CD00E0 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
 		59C33BE1276620B000CD00E0 /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
+		59CFE5D32767B8E200886CD0 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStartOfDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,14 +103,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		592B99BD2763C4F600ACF752 /* Extensions */ = {
+		592B99BD2763C4F600ACF752 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				592B99BE2763C50C00ACF752 /* StringNilWhenEmpty.swift */,
 				592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */,
 				59D2DF1E27648E0C000ED604 /* DateStartOfDay.swift */,
 			);
-			path = Extensions;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		597235712763698300619C49 = {
@@ -135,7 +137,7 @@
 				592B99BA2763C3D300ACF752 /* Entities */,
 				592B99BC2763C4F000ACF752 /* Data */,
 				59A7351F2766644400463498 /* Constants */,
-				592B99BD2763C4F600ACF752 /* Extensions */,
+				592B99BD2763C4F600ACF752 /* Utils */,
 				597235812763698300619C49 /* Assets.xcassets */,
 				597235832763698300619C49 /* Preview Content */,
 			);
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				59A735202766645500463498 /* Constants.swift */,
+				59CFE5D32767B8E200886CD0 /* CustomColors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */,
 				596AC09927651DFD00AA0BB6 /* CategoriesView.swift in Sources */,
 				592B99CC2763E25D00ACF752 /* SubscriptionTemplate.swift in Sources */,
+				59CFE5D42767B8E200886CD0 /* CustomColors.swift in Sources */,
 				5972357E2763698300619C49 /* BobbyCloneApp.swift in Sources */,
 				596AC09D276530C400AA0BB6 /* SubscriptionCellView.swift in Sources */,
 				596AC0A12765327C00AA0BB6 /* SubscriptionLibrary.swift in Sources */,

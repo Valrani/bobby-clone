@@ -12,7 +12,7 @@ import SwiftUI
 extension Color {
   
   /// Build a Color from its hexadecimal code.
-  init?(_ hex: String) {
+  init?(hex: String) {
     var str = hex
     if str.hasPrefix("#") {
       str.removeFirst()
