@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
   
-  /// Set the time to 00:00:00. The timezone is UTC +0000.
+  /// Set the time of a date to 00:00:00. The timezone is UTC +0000.
   var startOfDay: Date? {
     var calendar = Calendar.current
     guard let timeZone = TimeZone(identifier: "UTC") else { return nil }

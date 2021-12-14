@@ -1,5 +1,5 @@
 //
-//  SubscriptionEditionTopView.swift
+//  SubscriptionFormTopView.swift
 //  BobbyClone
 //
 //  Created by Antoine De Roose on 13/12/2021.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SubscriptionEditionTopView: View {
+struct SubscriptionFormTopView: View {
   
   @Environment(\.dismiss) private var dismissSubscriptionEditionView
   let name: String
@@ -37,9 +37,9 @@ struct SubscriptionEditionTopView: View {
   }
 }
 
-struct SubscriptionEditionTopView_Previews: PreviewProvider {
+struct SubscriptionFormTopView_Previews: PreviewProvider {
   static var previews: some View {
-    SubscriptionEditionTopView(name: "Test", onSave: {
+    SubscriptionFormTopView(name: "Test", onSave: {
       print("Prout")
     })
   }

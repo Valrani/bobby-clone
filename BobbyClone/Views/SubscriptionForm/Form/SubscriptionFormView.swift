@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SubscriptionFormView: View {
   
-  @Binding var subscriptionForm: SubscriptionForm
+  @Binding var subscriptionForm: SubscriptionConfig
   
   var body: some View {
     VStack {
@@ -40,7 +40,7 @@ struct SubscriptionFormView: View {
 }
 
 struct SubscriptionDetailView_Previews: PreviewProvider {
-  @State static var subscriptionForm = SubscriptionForm()
+  @State static var subscriptionForm = SubscriptionConfig()
   static var previews: some View {
     SubscriptionFormView(subscriptionForm: $subscriptionForm)
   }

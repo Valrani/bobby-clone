@@ -1,5 +1,5 @@
 //
-//  SubscriptionTemplate.swift
+//  Template.swift
 //  BobbyClone
 //
 //  Created by Antoine De Roose on 10/12/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SubscriptionTemplate: Identifiable {
+struct Template: Identifiable {
   
   let id: String
   let name: String
