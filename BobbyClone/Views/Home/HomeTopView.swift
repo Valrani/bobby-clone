@@ -44,7 +44,7 @@ struct HomeTopView: View {
             .foregroundColor(.secondary)
         }
         .sheet(isPresented: $isShowingSubscriptionTemplatesSheet) {
-          SubscriptionTemplatesView()
+          TemplatesView()
         }
       }
       .padding()
