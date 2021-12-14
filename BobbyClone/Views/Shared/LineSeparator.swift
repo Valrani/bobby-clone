@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct LineSeparator: View {
+  
+  var color: Color = .gray
+  
   var body: some View {
     Rectangle()
       .frame(height: 1)
-      .foregroundColor(.gray)
+      .foregroundColor(color)
       .opacity(0.3)
   }
 }
 
 struct LineSeparator_Previews: PreviewProvider {
   static var previews: some View {
-    LineSeparator()
-      .previewLayout(.sizeThatFits)
+    Group {
+      LineSeparator()
+      LineSeparator(color: .red)
+      LineSeparator(color: .green)
+    }
+    .previewLayout(.sizeThatFits)
+    .padding()
   }
 }

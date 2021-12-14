@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SubscriptionEditionView: View {
   
+  @Environment(\.dismiss) private var dismissSubscriptionEditionView
   @ObservedObject var subscription: Subscription
+  @State private var subscriptionForm = SubscriptionForm()
   
   var body: some View {
     ZStack {
@@ -17,17 +19,35 @@ struct SubscriptionEditionView: View {
         .foregroundColor(Color(hex: subscription.colorHex))
         .ignoresSafeArea()
       VStack(spacing: 0) {
-        SubscriptionEditionTopView(name: subscription.name, onSave: saveSubscription)
+        SubscriptionEditionTopView(name: subscription.name, onSave: updateSubscriptionAndDismiss)
         ScrollView {
-          Text("En travaux...")
+          SubscriptionFormView(subscriptionForm: $subscriptionForm)
         }
       }
       .foregroundColor(.white)
     }
+    .onAppear {
+      fillSubscriptionForm()
+    }
   }
   
-  private func saveSubscription() {
-    print("Saving \(subscription.name)...")
+  private func fillSubscriptionForm() {
+    subscriptionForm.iconString = subscription.iconString
+    subscriptionForm.price = subscription.price
+    subscriptionForm.name = subscription.name
+    subscriptionForm.description = subscription.description ?? ""
+    subscriptionForm.firstBilling = subscription.firstBilling ?? Date()
+  }
+  
+  private func updateSubscriptionAndDismiss() {
+    subscription.name = subscriptionForm.name
+    subscription.description = subscriptionForm.description.isEmpty ? nil : subscriptionForm.description
+    subscription.firstBilling = subscriptionForm.firstBilling
+    dismissSubscriptionEditionView()
+  }
+  
+  private func deleteSubscription() {
+    //TODO: delete
   }
   
 }
