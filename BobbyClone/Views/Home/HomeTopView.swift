@@ -18,7 +18,7 @@ struct HomeTopView: View {
       HStack {
         Button(action: showSettingsSheet) {
           Image(systemName: "gearshape")
-            .font(Font.title3.weight(.bold))
+            .font(Font.title3.weight(.semibold))
             .foregroundColor(.secondary)
         }
         .sheet(isPresented: $isShowingSettingsSheet) {
@@ -30,7 +30,7 @@ struct HomeTopView: View {
             Text("Toutes les souscriptions")
               .fontWeight(.bold)
             Image(systemName: "chevron.down")
-              .font(Font.caption.weight(.bold))
+              .font(Font.caption.weight(.semibold))
           }
           .foregroundColor(.primary)
         }
@@ -40,7 +40,7 @@ struct HomeTopView: View {
         Spacer()
         Button(action: showSubscriptionTemplatesSheet) {
           Image(systemName: "plus")
-            .font(Font.title3.weight(.bold))
+            .font(Font.title3.weight(.semibold))
             .foregroundColor(.secondary)
         }
         .sheet(isPresented: $isShowingSubscriptionTemplatesSheet) {

@@ -18,15 +18,15 @@ struct SubscriptionCellView: View {
         .padding(.trailing, 8)
       Text(subscription.name)
         .font(.headline)
-        .fontWeight(.none)
+        .fontWeight(.semibold)
       Spacer()
       VStack(alignment: .trailing) {
         Text("\(subscription.price, specifier: "%.2f") €")
           .font(.headline)
-          .fontWeight(.none)
+          .fontWeight(.semibold)
         if let nextBilling = subscription.nextBillingString {
           Text(nextBilling)
-            .font(.callout)
+            .font(.footnote)
         }
       }
     }

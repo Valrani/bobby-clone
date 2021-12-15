@@ -28,6 +28,7 @@ struct HomeBottomView: View {
               .font(.headline)
             Text(displayTimeUnitText())
               .font(.caption)
+              .fontWeight(.semibold)
               .foregroundColor(.secondary)
           }
           .padding()

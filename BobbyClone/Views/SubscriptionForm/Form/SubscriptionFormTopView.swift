@@ -17,22 +17,23 @@ struct SubscriptionFormTopView: View {
   var body: some View {
     VStack(spacing: 0) {
       HStack {
-        Button(action: {
-          dismissSubscriptionEditionView()
-        }) {
+        Button(action: { dismissSubscriptionEditionView() }) {
           Image(systemName: "chevron.down")
+            .font(Font.body.weight(.semibold))
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
         Text(name)
+          .fontWeight(.semibold)
           .frame(minWidth: 0, maxWidth: .infinity)
           .lineLimit(1)
         Button(action: onSave) {
           Text("Enregistrer")
+            .fontWeight(.semibold)
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
       }
       .padding()
-      LineSeparator()
+      LineSeparator(color: .white)
     }
   }
 }

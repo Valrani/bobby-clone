@@ -9,14 +9,18 @@ import SwiftUI
 
 struct SubscriptionFormView: View {
   
+  @State private var isShowingIconSheet = false
   @Binding var subscriptionForm: SubscriptionConfig
   
   var body: some View {
     VStack {
-      Button(action: {}) {
+      Button(action: showIconSheet) {
         Image(systemName: subscriptionForm.iconString)
           .font(.largeTitle)
           .padding()
+      }
+      .sheet(isPresented: $isShowingIconSheet) {
+        IconView(selectedIconString: $subscriptionForm.iconString)
       }
       Text("\(subscriptionForm.price, specifier: "%.2f") €")
         .padding(.bottom)
@@ -32,11 +36,18 @@ struct SubscriptionFormView: View {
           .multilineTextAlignment(.trailing)
       }
       LineSeparator(color: .white)
-      DatePicker("Première facturation", selection: $subscriptionForm.firstBilling, in: ...Date(), displayedComponents: .date)
-        .preferredColorScheme(.dark)
+      DatePicker(selection: $subscriptionForm.firstBilling, in: ...Date(), displayedComponents: .date) {
+        Text("Première facturation")
+      }
+      .preferredColorScheme(.dark)
     }
     .padding(.horizontal)
   }
+  
+  private func showIconSheet() {
+    isShowingIconSheet = true
+  }
+  
 }
 
 struct SubscriptionDetailView_Previews: PreviewProvider {

@@ -50,8 +50,11 @@ class Subscription: Identifiable, ObservableObject {
     }
   }
   
+  /// Returns a description of the next billing date
   var nextBillingString: String? {
     guard let nextBilling = nextBilling else { return nil }
+    guard nextBilling != Date().startOfDay else { return "Aujourd'hui" }
+    guard !Calendar.current.isDateInTomorrow(nextBilling) else { return "Demain" }
     let formatter = DateFormatter()
     formatter.dateFormat = "dd/MM/yyyy"
     return formatter.string(from: nextBilling)

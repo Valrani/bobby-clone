@@ -40,6 +40,8 @@ struct SubscriptionEditionView: View {
   }
   
   private func updateSubscriptionAndDismiss() {
+    subscription.iconString = subscriptionForm.iconString
+    subscription.price = subscriptionForm.price
     subscription.name = subscriptionForm.name
     subscription.description = subscriptionForm.description.isEmpty ? nil : subscriptionForm.description
     subscription.firstBilling = subscriptionForm.firstBilling

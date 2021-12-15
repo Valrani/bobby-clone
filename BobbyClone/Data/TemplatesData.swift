@@ -1,8 +1,8 @@
 //
-//  Data.swift
+//  TemplatesData.swift
 //  BobbyClone
 //
-//  Created by Antoine De Roose on 11/12/2021.
+//  Created by Antoine De Roose on 15/12/2021.
 //
 
 import Foundation
