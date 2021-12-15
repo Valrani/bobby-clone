@@ -14,6 +14,6 @@ struct SubscriptionConfig {
   var price = 0.00
   var name = ""
   var description = ""
-  var firstBilling = Date()
+  var firstBilling: Date? = nil
   
 }

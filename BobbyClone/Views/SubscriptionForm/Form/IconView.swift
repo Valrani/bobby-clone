@@ -9,9 +9,10 @@ import SwiftUI
 
 struct IconView: View {
   
+  @Binding var selectedIconString: String
+  
   @Environment(\.dismiss) private var dismissIconView
   @State private var searchText = ""
-  @Binding var selectedIconString: String
   
   private var filteredIcons: [String] {
     guard !searchText.isEmpty else { return sfSymbols }

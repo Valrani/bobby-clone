@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59005EB1276A9149007C637F /* OptionalDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59005EB0276A9149007C637F /* OptionalDatePickerView.swift */; };
 		5919012327694D0F00522668 /* TemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5919012227694D0F00522668 /* TemplatesView.swift */; };
 		592B99C02763C59700ACF752 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99BF2763C59700ACF752 /* Subscription.swift */; };
 		592B99C22763D48400ACF752 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C12763D48400ACF752 /* Category.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59005EB0276A9149007C637F /* OptionalDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalDatePickerView.swift; sourceTree = "<group>"; };
 		5919012227694D0F00522668 /* TemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesView.swift; sourceTree = "<group>"; };
 		592B99BE2763C50C00ACF752 /* StringNilWhenEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringNilWhenEmpty.swift; sourceTree = "<group>"; };
 		592B99BF2763C59700ACF752 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				599C9F672769160E004C0639 /* SubscriptionFormView.swift */,
 				59CFE5D72767EA2E00886CD0 /* SubscriptionFormTopView.swift */,
+				59005EB0276A9149007C637F /* OptionalDatePickerView.swift */,
 				599C9F69276931EE004C0639 /* SubscriptionConfig.swift */,
 				59A0CF2C2769FF4000599973 /* IconView.swift */,
 			);
@@ -319,6 +322,7 @@
 				592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */,
 				592B99C22763D48400ACF752 /* Category.swift in Sources */,
 				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
+				59005EB1276A9149007C637F /* OptionalDatePickerView.swift in Sources */,
 				599C9F682769160E004C0639 /* SubscriptionFormView.swift in Sources */,
 				59CFE5DB2767F6DB00886CD0 /* SubscriptionCreationView.swift in Sources */,
 				597235802763698300619C49 /* HomeView.swift in Sources */,

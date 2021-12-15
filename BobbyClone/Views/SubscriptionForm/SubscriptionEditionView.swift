@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SubscriptionEditionView: View {
   
-  @Environment(\.dismiss) private var dismissSubscriptionEditionView
   @ObservedObject var subscription: Subscription
+  
+  @Environment(\.dismiss) private var dismissSubscriptionEditionView
   @State private var subscriptionForm = SubscriptionConfig()
   
   var body: some View {
@@ -27,16 +28,16 @@ struct SubscriptionEditionView: View {
       .foregroundColor(.white)
     }
     .onAppear {
-      fillSubscriptionForm()
+      initSubscriptionForm()
     }
   }
   
-  private func fillSubscriptionForm() {
+  private func initSubscriptionForm() {
     subscriptionForm.iconString = subscription.iconString
     subscriptionForm.price = subscription.price
     subscriptionForm.name = subscription.name
     subscriptionForm.description = subscription.description ?? ""
-    subscriptionForm.firstBilling = subscription.firstBilling ?? Date()
+    subscriptionForm.firstBilling = subscription.firstBilling
   }
   
   private func updateSubscriptionAndDismiss() {

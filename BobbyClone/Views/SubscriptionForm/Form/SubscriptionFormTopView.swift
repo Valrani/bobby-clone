@@ -10,9 +10,10 @@ import SwiftUI
 
 struct SubscriptionFormTopView: View {
   
-  @Environment(\.dismiss) private var dismissSubscriptionEditionView
   let name: String
   let onSave: () -> Void
+  
+  @Environment(\.dismiss) private var dismissSubscriptionEditionView
   
   var body: some View {
     VStack(spacing: 0) {

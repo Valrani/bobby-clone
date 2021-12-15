@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SubscriptionFormView: View {
   
-  @State private var isShowingIconSheet = false
   @Binding var subscriptionForm: SubscriptionConfig
+  
+  @State private var isShowingIconSheet = false
   
   var body: some View {
     VStack {
@@ -30,16 +31,17 @@ struct SubscriptionFormView: View {
           .multilineTextAlignment(.trailing)
       }
       LineSeparator(color: .white)
+        .padding(.bottom, 4)
       HStack {
         Text("Description")
         TextField("Entrer une description", text: $subscriptionForm.description)
           .multilineTextAlignment(.trailing)
       }
       LineSeparator(color: .white)
-      DatePicker(selection: $subscriptionForm.firstBilling, in: ...Date(), displayedComponents: .date) {
+        .padding(.bottom, 4)
+      OptionalDatePickerView(selection: $subscriptionForm.firstBilling, range: ...Date(), displayedComponents: .date, prompt: "Entrer une date") {
         Text("Première facturation")
       }
-      .preferredColorScheme(.dark)
     }
     .padding(.horizontal)
   }
