@@ -22,6 +22,7 @@ struct SubscriptionFormView: View {
       }
       .sheet(isPresented: $isShowingIconSheet) {
         IconView(selectedIconString: $subscriptionForm.iconString)
+          .foregroundColor(.primary)
       }
       Text("\(subscriptionForm.price, specifier: "%.2f") €")
         .padding(.bottom)

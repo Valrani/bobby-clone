@@ -8,8 +8,8 @@
 import SwiftUI
 
 /// This view enables to do something impossible in SwiftUI 3 : use a DatePicker with an optional date.
-/// This view can be used like a regular DatePicker, but when the Date? is nil, it displays a dummy TextField instead.
-/// When the TextField is tapped, a regular DatePicker is presented.
+/// This view can be used like a regular DatePicker, but when the Date? is nil, it displays a view similar to a TextField.
+/// When the fake TextField, wich is just a text, is tapped, a regular DatePicker is presented.
 ///
 /// Warning, as soon as the TextField is tapped, the Date? is setted to a value (typically the date of today).
 /// This could be improved if necessary.
@@ -22,7 +22,6 @@ struct OptionalDatePickerView<Content: View>: View {
   @ViewBuilder var content: Content
   
   @State private var selectedDate = Date()
-  @State private var textFieldBinding = ""
   @State private var displayFirstBillingDatePicker = false
   
   var body: some View {
@@ -30,20 +29,15 @@ struct OptionalDatePickerView<Content: View>: View {
     if selection == nil && !displayFirstBillingDatePicker {
       HStack {
         content
-        TextField(prompt, text: $textFieldBinding)
-        // TODO: disabled to prevent the keyboard to show up, but the onTapGesture is also disabled.
-        //.disabled(true)
-          .multilineTextAlignment(.trailing)
-          .onTapGesture {
-            print("Hey")
-            displayFirstBillingDatePicker = true
-          }
+        Spacer()
+        Text(prompt)
+          .foregroundColor(Color(uiColor: .tertiaryLabel))
+          .onTapGesture { displayFirstBillingDatePicker = true }
       }
     } else {
       DatePicker(selection: $selectedDate, in: range, displayedComponents: displayedComponents) {
         content
       }
-      .preferredColorScheme(.dark)
       .onAppear(perform: {
         if let selection = selection {
           selectedDate = selection
@@ -63,8 +57,17 @@ struct OptionalDatePickerView<Content: View>: View {
 struct OptionalDatePicker_Previews: PreviewProvider {
   @State static var date: Date? = nil
   static var previews: some View {
-    OptionalDatePickerView(selection: $date, range: ...Date(), displayedComponents: .date) {
-      Text("Mon picker")
+    Group {
+      OptionalDatePickerView(selection: $date, range: ...Date(), displayedComponents: .date) {
+        Text("Mon picker")
+          .preferredColorScheme(.light)
+      }
+      OptionalDatePickerView(selection: $date, range: ...Date(), displayedComponents: .date) {
+        Text("Mon picker")
+      }
+      .preferredColorScheme(.dark)
     }
+    .previewLayout(.sizeThatFits)
+    .padding()
   }
 }
