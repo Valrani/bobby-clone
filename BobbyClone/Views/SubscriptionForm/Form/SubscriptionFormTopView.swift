@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SubscriptionFormTopView: View {
   
-  let name: String
+  @Binding var subscriptionConfig: SubscriptionConfig
   let onSave: () -> Void
   
   @Environment(\.dismiss) private var dismissSubscriptionEditionView
@@ -23,7 +23,7 @@ struct SubscriptionFormTopView: View {
             .font(Font.body.weight(.semibold))
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-        Text(name)
+        Text(subscriptionConfig.name)
           .fontWeight(.semibold)
           .frame(minWidth: 0, maxWidth: .infinity)
           .lineLimit(1)
@@ -36,12 +36,15 @@ struct SubscriptionFormTopView: View {
       .padding()
       LineSeparator(color: .white)
     }
+    .foregroundColor(subscriptionConfig.colorHex == "#FFFFFF" ? .black : .white)
+    .background(Color(hex: subscriptionConfig.colorHex))
   }
 }
 
 struct SubscriptionFormTopView_Previews: PreviewProvider {
+  @State static var subscriptionConfig = SubscriptionConfig()
   static var previews: some View {
-    SubscriptionFormTopView(name: "Test", onSave: {
+    SubscriptionFormTopView(subscriptionConfig: $subscriptionConfig, onSave: {
       print("Prout")
     })
   }

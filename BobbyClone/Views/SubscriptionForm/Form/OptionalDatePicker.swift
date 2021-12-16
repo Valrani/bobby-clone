@@ -1,5 +1,5 @@
 //
-//  OptionalDatePickerView.swift
+//  OptionalDatePicker.swift
 //  BobbyClone
 //
 //  Created by Antoine De Roose on 15/12/2021.
@@ -13,7 +13,7 @@ import SwiftUI
 ///
 /// Warning, as soon as the TextField is tapped, the Date? is setted to a value (typically the date of today).
 /// This could be improved if necessary.
-struct OptionalDatePickerView<Content: View>: View {
+struct OptionalDatePicker<Content: View>: View {
   
   @Binding var selection: Date?
   var range: PartialRangeThrough<Date>
@@ -25,7 +25,6 @@ struct OptionalDatePickerView<Content: View>: View {
   @State private var displayFirstBillingDatePicker = false
   
   var body: some View {
-    
     if selection == nil && !displayFirstBillingDatePicker {
       HStack {
         content
@@ -58,11 +57,11 @@ struct OptionalDatePicker_Previews: PreviewProvider {
   @State static var date: Date? = nil
   static var previews: some View {
     Group {
-      OptionalDatePickerView(selection: $date, range: ...Date(), displayedComponents: .date) {
+      OptionalDatePicker(selection: $date, range: ...Date(), displayedComponents: .date) {
         Text("Mon picker")
           .preferredColorScheme(.light)
       }
-      OptionalDatePickerView(selection: $date, range: ...Date(), displayedComponents: .date) {
+      OptionalDatePicker(selection: $date, range: ...Date(), displayedComponents: .date) {
         Text("Mon picker")
       }
       .preferredColorScheme(.dark)

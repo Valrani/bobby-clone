@@ -30,12 +30,16 @@ struct SubscriptionCellView: View {
         }
       }
     }
-    .foregroundColor(.white)
+    .foregroundColor(subscription.colorHex == "#FFFFFF" ? .black : .white)
     .padding(.horizontal)
     .frame(minHeight: 60)
     .background {
-      RoundedRectangle(cornerRadius: 5)
-        .foregroundColor(Color(hex: subscription.colorHex))
+      RoundedRectangle(cornerRadius: 6)
+        .strokeBorder(subscription.colorHex == "#FFFFFF" ? .secondary : Color.clear)
+        .background(
+          RoundedRectangle(cornerRadius: 6)
+          .foregroundColor(Color(hex: subscription.colorHex))
+        )
     }
   }
 }
@@ -49,5 +53,6 @@ struct SubscriptionCellView_Previews: PreviewProvider {
       }
     }
     .previewLayout(.sizeThatFits)
+    .padding()
   }
 }

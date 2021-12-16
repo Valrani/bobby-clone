@@ -12,20 +12,12 @@ struct SubscriptionEditionView: View {
   @ObservedObject var subscription: Subscription
   
   @Environment(\.dismiss) private var dismissSubscriptionEditionView
-  @State private var subscriptionForm = SubscriptionConfig()
+  @State private var subscriptionConfig = SubscriptionConfig()
   
   var body: some View {
-    ZStack {
-      Rectangle()
-        .foregroundColor(Color(hex: subscription.colorHex))
-        .ignoresSafeArea()
-      VStack(spacing: 0) {
-        SubscriptionFormTopView(name: subscription.name, onSave: updateSubscriptionAndDismiss)
-        ScrollView {
-          SubscriptionFormView(subscriptionForm: $subscriptionForm)
-        }
-      }
-      .foregroundColor(.white)
+    VStack(spacing: 0) {
+      SubscriptionFormTopView(subscriptionConfig: $subscriptionConfig, onSave: updateSubscriptionAndDismiss)
+      SubscriptionFormView(subscriptionConfig: $subscriptionConfig)
     }
     .onAppear {
       initSubscriptionForm()
@@ -33,19 +25,21 @@ struct SubscriptionEditionView: View {
   }
   
   private func initSubscriptionForm() {
-    subscriptionForm.iconString = subscription.iconString
-    subscriptionForm.price = subscription.price
-    subscriptionForm.name = subscription.name
-    subscriptionForm.description = subscription.description ?? ""
-    subscriptionForm.firstBilling = subscription.firstBilling
+    subscriptionConfig.iconString = subscription.iconString
+    subscriptionConfig.price = subscription.price
+    subscriptionConfig.name = subscription.name
+    subscriptionConfig.description = subscription.description ?? ""
+    subscriptionConfig.colorHex = subscription.colorHex
+    subscriptionConfig.firstBilling = subscription.firstBilling
   }
   
   private func updateSubscriptionAndDismiss() {
-    subscription.iconString = subscriptionForm.iconString
-    subscription.price = subscriptionForm.price
-    subscription.name = subscriptionForm.name
-    subscription.description = subscriptionForm.description.isEmpty ? nil : subscriptionForm.description
-    subscription.firstBilling = subscriptionForm.firstBilling
+    subscription.iconString = subscriptionConfig.iconString
+    subscription.price = subscriptionConfig.price
+    subscription.name = subscriptionConfig.name
+    subscription.description = subscriptionConfig.description.isEmpty ? nil : subscriptionConfig.description
+    subscription.colorHex = subscriptionConfig.colorHex
+    subscription.firstBilling = subscriptionConfig.firstBilling
     dismissSubscriptionEditionView()
   }
   

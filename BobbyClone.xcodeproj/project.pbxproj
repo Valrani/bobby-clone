@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59005EB1276A9149007C637F /* OptionalDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59005EB0276A9149007C637F /* OptionalDatePickerView.swift */; };
+		59005EB1276A9149007C637F /* OptionalDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59005EB0276A9149007C637F /* OptionalDatePicker.swift */; };
 		5919012327694D0F00522668 /* TemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5919012227694D0F00522668 /* TemplatesView.swift */; };
 		592B99C02763C59700ACF752 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99BF2763C59700ACF752 /* Subscription.swift */; };
 		592B99C22763D48400ACF752 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C12763D48400ACF752 /* Category.swift */; };
@@ -22,10 +22,12 @@
 		597235802763698300619C49 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972357F2763698300619C49 /* HomeView.swift */; };
 		597235822763698300619C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235812763698300619C49 /* Assets.xcassets */; };
 		597235852763698300619C49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597235842763698300619C49 /* Preview Assets.xcassets */; };
+		59746E82276BF0370039CC34 /* ColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59746E81276BF0370039CC34 /* ColorSelectionView.swift */; };
+		59746E84276BF0850039CC34 /* ColorsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59746E83276BF0850039CC34 /* ColorsData.swift */; };
 		597EC35B2766763B00311E79 /* LineSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597EC35A2766763B00311E79 /* LineSeparator.swift */; };
 		599C9F682769160E004C0639 /* SubscriptionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9F672769160E004C0639 /* SubscriptionFormView.swift */; };
 		599C9F6A276931EE004C0639 /* SubscriptionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C9F69276931EE004C0639 /* SubscriptionConfig.swift */; };
-		59A0CF2D2769FF4000599973 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0CF2C2769FF4000599973 /* IconView.swift */; };
+		59A0CF2D2769FF4000599973 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0CF2C2769FF4000599973 /* IconSelectionView.swift */; };
 		59A0CF2F276A718000599973 /* SFSymbolsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0CF2E276A718000599973 /* SFSymbolsData.swift */; };
 		59A0CF31276A718900599973 /* TemplatesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0CF30276A718900599973 /* TemplatesData.swift */; };
 		59A7351E27663C6D00463498 /* HomeBottomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7351D27663C6D00463498 /* HomeBottomDetailView.swift */; };
@@ -40,7 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		59005EB0276A9149007C637F /* OptionalDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalDatePickerView.swift; sourceTree = "<group>"; };
+		59005EB0276A9149007C637F /* OptionalDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalDatePicker.swift; sourceTree = "<group>"; };
 		5919012227694D0F00522668 /* TemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesView.swift; sourceTree = "<group>"; };
 		592B99BE2763C50C00ACF752 /* StringNilWhenEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringNilWhenEmpty.swift; sourceTree = "<group>"; };
 		592B99BF2763C59700ACF752 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
@@ -57,10 +59,12 @@
 		5972357F2763698300619C49 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		597235812763698300619C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		597235842763698300619C49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		59746E81276BF0370039CC34 /* ColorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionView.swift; sourceTree = "<group>"; };
+		59746E83276BF0850039CC34 /* ColorsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsData.swift; sourceTree = "<group>"; };
 		597EC35A2766763B00311E79 /* LineSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSeparator.swift; sourceTree = "<group>"; };
 		599C9F672769160E004C0639 /* SubscriptionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFormView.swift; sourceTree = "<group>"; };
 		599C9F69276931EE004C0639 /* SubscriptionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionConfig.swift; sourceTree = "<group>"; };
-		59A0CF2C2769FF4000599973 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		59A0CF2C2769FF4000599973 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
 		59A0CF2E276A718000599973 /* SFSymbolsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsData.swift; sourceTree = "<group>"; };
 		59A0CF30276A718900599973 /* TemplatesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesData.swift; sourceTree = "<group>"; };
 		59A7351D27663C6D00463498 /* HomeBottomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomDetailView.swift; sourceTree = "<group>"; };
@@ -108,9 +112,10 @@
 			children = (
 				599C9F672769160E004C0639 /* SubscriptionFormView.swift */,
 				59CFE5D72767EA2E00886CD0 /* SubscriptionFormTopView.swift */,
-				59005EB0276A9149007C637F /* OptionalDatePickerView.swift */,
+				59005EB0276A9149007C637F /* OptionalDatePicker.swift */,
+				59A0CF2C2769FF4000599973 /* IconSelectionView.swift */,
+				59746E81276BF0370039CC34 /* ColorSelectionView.swift */,
 				599C9F69276931EE004C0639 /* SubscriptionConfig.swift */,
-				59A0CF2C2769FF4000599973 /* IconView.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				596AC0A02765327C00AA0BB6 /* SubscriptionLibrary.swift */,
 				59A0CF30276A718900599973 /* TemplatesData.swift */,
+				59746E83276BF0850039CC34 /* ColorsData.swift */,
 				59A0CF2E276A718000599973 /* SFSymbolsData.swift */,
 			);
 			path = Data;
@@ -316,17 +322,19 @@
 				59C33BE2276620B000CD00E0 /* HomeBottomView.swift in Sources */,
 				59A735212766645500463498 /* Constants.swift in Sources */,
 				59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */,
-				59A0CF2D2769FF4000599973 /* IconView.swift in Sources */,
+				59A0CF2D2769FF4000599973 /* IconSelectionView.swift in Sources */,
 				592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */,
 				59C33BE0276620AA00CD00E0 /* HomeTopView.swift in Sources */,
 				592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */,
 				592B99C22763D48400ACF752 /* Category.swift in Sources */,
 				592B99C02763C59700ACF752 /* Subscription.swift in Sources */,
-				59005EB1276A9149007C637F /* OptionalDatePickerView.swift in Sources */,
+				59005EB1276A9149007C637F /* OptionalDatePicker.swift in Sources */,
 				599C9F682769160E004C0639 /* SubscriptionFormView.swift in Sources */,
 				59CFE5DB2767F6DB00886CD0 /* SubscriptionCreationView.swift in Sources */,
+				59746E82276BF0370039CC34 /* ColorSelectionView.swift in Sources */,
 				597235802763698300619C49 /* HomeView.swift in Sources */,
 				59CFE5D62767D34300886CD0 /* SubscriptionEditionView.swift in Sources */,
+				59746E84276BF0850039CC34 /* ColorsData.swift in Sources */,
 				59A7351E27663C6D00463498 /* HomeBottomDetailView.swift in Sources */,
 				596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */,
 				599C9F6A276931EE004C0639 /* SubscriptionConfig.swift in Sources */,

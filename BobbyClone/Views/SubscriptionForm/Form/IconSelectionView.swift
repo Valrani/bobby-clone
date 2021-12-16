@@ -1,5 +1,5 @@
 //
-//  IconView.swift
+//  IconSelectionView.swift
 //  BobbyClone
 //
 //  Created by Antoine De Roose on 15/12/2021.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct IconView: View {
+struct IconSelectionView: View {
   
   @Binding var selectedIconString: String
   
-  @Environment(\.dismiss) private var dismissIconView
+  @Environment(\.dismiss) private var dismissIconSelectionView
   @State private var searchText = ""
   
   private var filteredIcons: [String] {
@@ -42,7 +42,7 @@ struct IconView: View {
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
-          Button(action: { dismissIconView() }) {
+          Button(action: { dismissIconSelectionView() }) {
             Image(systemName: "chevron.down")
               .foregroundColor(.primary)
           }
@@ -54,7 +54,7 @@ struct IconView: View {
   
   private func selectIconAndDismiss(iconString: String) {
     selectedIconString = iconString
-    dismissIconView()
+    dismissIconSelectionView()
   }
   
 }
@@ -62,7 +62,7 @@ struct IconView: View {
 struct IconView_Previews: PreviewProvider {
   @State static var selectedIconString = ""
   static var previews: some View {
-    //Text("Preview can be slow due to the number of icons")
-    IconView(selectedIconString: $selectedIconString)
+    Text("Preview can be slow due to the number of icons")
+    //IconSelectionView(selectedIconString: $selectedIconString)
   }
 }
