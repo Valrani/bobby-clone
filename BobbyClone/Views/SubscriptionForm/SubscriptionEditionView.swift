@@ -12,12 +12,13 @@ struct SubscriptionEditionView: View {
   @ObservedObject var subscription: Subscription
   
   @Environment(\.dismiss) private var dismissSubscriptionEditionView
+  @EnvironmentObject var subscriptionLibrary: SubscriptionLibrary
   @State private var subscriptionConfig = SubscriptionConfig()
   
   var body: some View {
     VStack(spacing: 0) {
       SubscriptionFormTopView(subscriptionConfig: $subscriptionConfig, onSave: updateSubscriptionAndDismiss)
-      SubscriptionFormView(subscriptionConfig: $subscriptionConfig)
+      SubscriptionFormView(subscriptionConfig: $subscriptionConfig, formState: .edition, onDelete: deleteSubscriptionAndDismiss)
     }
     .onAppear {
       initSubscriptionForm()
@@ -47,8 +48,11 @@ struct SubscriptionEditionView: View {
     dismissSubscriptionEditionView()
   }
   
-  private func deleteSubscription() {
-    //TODO: delete
+  private func deleteSubscriptionAndDismiss() {
+    if let index = subscriptionLibrary.allSubscriptions.firstIndex(where: { $0.id == subscription.id }) {
+      subscriptionLibrary.allSubscriptions.remove(at: index)
+    }
+    dismissSubscriptionEditionView()
   }
   
 }
@@ -57,5 +61,6 @@ struct SubscriptionEdition_Previews: PreviewProvider {
   @StateObject static var subscriptionLibrary = SubscriptionLibrary()
   static var previews: some View {
     SubscriptionEditionView(subscription: subscriptionLibrary.allSubscriptions[0])
+      .environmentObject(SubscriptionLibrary())
   }
 }

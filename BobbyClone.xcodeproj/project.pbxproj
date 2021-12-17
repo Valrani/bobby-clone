@@ -11,6 +11,7 @@
 		5919012327694D0F00522668 /* TemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5919012227694D0F00522668 /* TemplatesView.swift */; };
 		5927814E276CF8B30047DEB9 /* BillingCyclePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5927814D276CF8B30047DEB9 /* BillingCyclePicker.swift */; };
 		59278150276CFA350047DEB9 /* BillingCycleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5927814F276CFA350047DEB9 /* BillingCycleData.swift */; };
+		59278154276D32750047DEB9 /* FormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59278153276D32750047DEB9 /* FormState.swift */; };
 		592B99C02763C59700ACF752 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99BF2763C59700ACF752 /* Subscription.swift */; };
 		592B99C22763D48400ACF752 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C12763D48400ACF752 /* Category.swift */; };
 		592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C72763D56100ACF752 /* TimeUnit.swift */; };
@@ -49,6 +50,7 @@
 		5919012227694D0F00522668 /* TemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesView.swift; sourceTree = "<group>"; };
 		5927814D276CF8B30047DEB9 /* BillingCyclePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingCyclePicker.swift; sourceTree = "<group>"; };
 		5927814F276CFA350047DEB9 /* BillingCycleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingCycleData.swift; sourceTree = "<group>"; };
+		59278153276D32750047DEB9 /* FormState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormState.swift; sourceTree = "<group>"; };
 		592B99BE2763C50C00ACF752 /* StringNilWhenEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringNilWhenEmpty.swift; sourceTree = "<group>"; };
 		592B99BF2763C59700ACF752 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		592B99C12763D48400ACF752 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 				5927814D276CF8B30047DEB9 /* BillingCyclePicker.swift */,
 				59A0CF2C2769FF4000599973 /* IconSelectionView.swift */,
 				59746E81276BF0370039CC34 /* ColorSelectionView.swift */,
-				599C9F69276931EE004C0639 /* SubscriptionConfig.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -134,6 +135,8 @@
 				592B99C12763D48400ACF752 /* Category.swift */,
 				592B99C72763D56100ACF752 /* TimeUnit.swift */,
 				592B99CB2763E25D00ACF752 /* Template.swift */,
+				599C9F69276931EE004C0639 /* SubscriptionConfig.swift */,
+				59278153276D32750047DEB9 /* FormState.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				59746E82276BF0370039CC34 /* ColorSelectionView.swift in Sources */,
 				597235802763698300619C49 /* HomeView.swift in Sources */,
 				59CFE5D62767D34300886CD0 /* SubscriptionEditionView.swift in Sources */,
+				59278154276D32750047DEB9 /* FormState.swift in Sources */,
 				59746E84276BF0850039CC34 /* ColorsData.swift in Sources */,
 				59A7351E27663C6D00463498 /* HomeBottomDetailView.swift in Sources */,
 				596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */,

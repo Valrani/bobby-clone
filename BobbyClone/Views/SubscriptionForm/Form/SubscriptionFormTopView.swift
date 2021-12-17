@@ -45,7 +45,7 @@ struct SubscriptionFormTopView_Previews: PreviewProvider {
   @State static var subscriptionConfig = SubscriptionConfig()
   static var previews: some View {
     SubscriptionFormTopView(subscriptionConfig: $subscriptionConfig, onSave: {
-      print("Prout")
+      print("saving...")
     })
   }
 }

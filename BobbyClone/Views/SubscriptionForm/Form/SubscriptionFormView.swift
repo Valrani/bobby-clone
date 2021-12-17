@@ -11,10 +11,13 @@ import SwiftUI
 struct SubscriptionFormView: View {
   
   @Binding var subscriptionConfig: SubscriptionConfig
+  @State var formState: FormState
+  let onDelete: () -> Void
   
   @State private var isShowingIconSelectionSheet = false
   @State private var isShowingColorSelectionSheet = false
   @State private var isShowingBillingCyclePicker = false
+  @State private var isShowingDeleteConfirmationDialog = false
   
   var body: some View {
     ZStack(alignment: .bottom) {
@@ -86,6 +89,21 @@ struct SubscriptionFormView: View {
           }
           .foregroundColor(subscriptionConfig.colorHex == nil ? .primary : .white)
           .padding(.horizontal)
+          .padding(.bottom)
+          if formState == .edition {
+            Button(action: showDeleteConfirmationDialog) {
+              Text("Supprimer Abonnement")
+                .textCase(.uppercase)
+                .foregroundColor(subscriptionConfig.colorHex == nil ? .primary : .white)
+                .padding(32)
+            }
+            .confirmationDialog("Voulez-vous vraiment supprimer ?", isPresented: $isShowingDeleteConfirmationDialog) {
+              Button("Supprimer", role: .destructive, action: onDelete)
+              Button("Annuler", role: .cancel) {}
+            } message: {
+              Text("Voulez-vous vraiment supprimer ?")
+            }
+          }
         }
       }
       .zIndex(1)
@@ -134,11 +152,17 @@ struct SubscriptionFormView: View {
     }
   }
   
+  private func showDeleteConfirmationDialog() {
+    isShowingDeleteConfirmationDialog = true
+  }
+  
 }
 
 struct SubscriptionDetailView_Previews: PreviewProvider {
   @State static var subscriptionConfig = SubscriptionConfig()
   static var previews: some View {
-    SubscriptionFormView(subscriptionConfig: $subscriptionConfig)
+    SubscriptionFormView(subscriptionConfig: $subscriptionConfig, formState: .edition, onDelete: {
+      print("deleting...")
+    })
   }
 }
