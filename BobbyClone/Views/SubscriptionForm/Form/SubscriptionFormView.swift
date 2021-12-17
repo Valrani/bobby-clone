@@ -30,7 +30,8 @@ struct SubscriptionFormView: View {
             IconSelectionView(selectedIconString: $subscriptionConfig.iconString)
               .foregroundColor(.primary)
           }
-          Text("\(subscriptionConfig.price, specifier: "%.2f") €")
+          DecimalField(double: $subscriptionConfig.price)
+            .multilineTextAlignment(.center)
             .font(.title2)
             .padding(.bottom,32)
           HStack {
