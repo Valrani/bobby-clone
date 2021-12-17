@@ -16,5 +16,7 @@ struct SubscriptionConfig {
   var description = ""
   var colorHex: String? = nil
   var firstBilling: Date? = nil
-  
+  var billingCycleNumber = 1
+  var billingCycleTimeUnit: TimeUnit = .month
+
 }

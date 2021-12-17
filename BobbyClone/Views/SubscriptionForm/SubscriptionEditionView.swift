@@ -31,6 +31,8 @@ struct SubscriptionEditionView: View {
     subscriptionConfig.description = subscription.description ?? ""
     subscriptionConfig.colorHex = subscription.colorHex
     subscriptionConfig.firstBilling = subscription.firstBilling
+    subscriptionConfig.billingCycleNumber = subscription.billingCycleNumber
+    subscriptionConfig.billingCycleTimeUnit = subscription.billingCycleTimeUnit
   }
   
   private func updateSubscriptionAndDismiss() {
@@ -40,6 +42,8 @@ struct SubscriptionEditionView: View {
     subscription.description = subscriptionConfig.description.isEmpty ? nil : subscriptionConfig.description
     subscription.colorHex = subscriptionConfig.colorHex
     subscription.firstBilling = subscriptionConfig.firstBilling
+    subscription.billingCycleNumber = subscriptionConfig.billingCycleNumber
+    subscription.billingCycleTimeUnit = subscriptionConfig.billingCycleTimeUnit
     dismissSubscriptionEditionView()
   }
   
