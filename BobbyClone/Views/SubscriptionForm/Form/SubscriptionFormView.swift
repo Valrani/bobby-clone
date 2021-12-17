@@ -98,7 +98,7 @@ struct SubscriptionFormView: View {
                 .padding(32)
             }
             .confirmationDialog("Voulez-vous vraiment supprimer ?", isPresented: $isShowingDeleteConfirmationDialog) {
-              Button("Supprimer", role: .destructive, action: onDelete)
+              Button("Supprimer \(subscriptionConfig.name)", role: .destructive, action: onDelete)
               Button("Annuler", role: .cancel) {}
             } message: {
               Text("Voulez-vous vraiment supprimer ?")

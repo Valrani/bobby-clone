@@ -38,6 +38,7 @@ struct SubscriptionFormTopView: View {
     }
     .foregroundColor(subscriptionConfig.colorHex == nil ? .primary : .white)
     .background(subscriptionConfig.colorHex == nil ? Color(uiColor: .systemBackground) : Color(hex: subscriptionConfig.colorHex!))
+    .ignoresSafeArea()
   }
 }
 
