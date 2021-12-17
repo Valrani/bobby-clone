@@ -16,6 +16,7 @@ struct BillingCyclePicker: View {
   
 //  @State private var prompt = "Chaque"
   private let pickersWidth: CGFloat = 170
+  private let pickersHeight: CGFloat = 180
   
   var body: some View {
     HStack(spacing: 0) {
@@ -23,7 +24,7 @@ struct BillingCyclePicker: View {
 //        Text(prompt)
 //      }
 //      .pickerStyle(.inline)
-//      .frame(width: pickersWidth)
+//      .frame(width: pickersWidth, height: pickersHeight)
 //      .compositingGroup()
 //      .clipped()
       Picker("Number", selection: $number) {
@@ -32,7 +33,7 @@ struct BillingCyclePicker: View {
         }
       }
       .pickerStyle(.inline)
-      .frame(width: pickersWidth)
+      .frame(width: pickersWidth, height: pickersHeight)
       .compositingGroup()
       .clipped()
       Picker("Time Unit", selection: $timeUnit) {
@@ -41,7 +42,7 @@ struct BillingCyclePicker: View {
         }
       }
       .pickerStyle(.inline)
-      .frame(width: pickersWidth)
+      .frame(width: pickersWidth, height: pickersHeight)
       .compositingGroup()
       .clipped()
     }
