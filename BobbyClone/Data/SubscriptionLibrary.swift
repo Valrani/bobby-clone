@@ -14,7 +14,7 @@ class SubscriptionLibrary: ObservableObject {
   
   @Published var allSubscriptions = [
     Subscription(name: "PlayStation Plus", price: 50, iconString: "plus", colorHex: "#277DA1", firstBilling: _2020_01_01, billingCycleNumber: 1, billingCycleTimeUnit: .year),
-    Subscription(name: "Notion", price: 4, iconString: "questionmark.square", colorHex: "#FFFFFF", firstBilling: _2021_12_08, billingCycleNumber: 1, billingCycleTimeUnit: .month),
+    Subscription(name: "Notion", price: 4, iconString: "questionmark.square", firstBilling: _2021_12_08, billingCycleNumber: 1, billingCycleTimeUnit: .month),
     Subscription(name: "Netflix", price: 29.99, iconString: "n.circle", colorHex: "#F94144", billingCycleNumber: 3, billingCycleTimeUnit: .month),
     Subscription(name: "Firebase", price: 25, iconString: "flame.fill", colorHex: "#F3722C", billingCycleNumber: 2, billingCycleTimeUnit: .week)
   ]

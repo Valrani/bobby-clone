@@ -17,7 +17,7 @@ class Subscription: Identifiable, ObservableObject {
   @Published var description: String?
   @Published var price: Double
   @Published var iconString: String
-  @Published var colorHex: String
+  @Published var colorHex: String?
   @Published var firstBilling: Date?
   @Published var billingCycleNumber: Int
   @Published var billingCycleTimeUnit: TimeUnit
@@ -60,7 +60,7 @@ class Subscription: Identifiable, ObservableObject {
     return formatter.string(from: nextBilling)
   }
   
-  init(name: String, description: String? = nil, price: Double, iconString: String, colorHex: String, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {
+  init(name: String, description: String? = nil, price: Double, iconString: String, colorHex: String? = nil, firstBilling: Date? = nil, billingCycleNumber: Int, billingCycleTimeUnit: TimeUnit) {
     self.id = UUID().uuidString
     self.name = name
     self.description = description

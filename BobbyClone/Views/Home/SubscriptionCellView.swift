@@ -30,15 +30,15 @@ struct SubscriptionCellView: View {
         }
       }
     }
-    .foregroundColor(subscription.colorHex == "#FFFFFF" ? .black : .white)
+    .foregroundColor(subscription.colorHex == nil ? .primary : .white)
     .padding(.horizontal)
     .frame(minHeight: 60)
     .background {
       RoundedRectangle(cornerRadius: 6)
-        .strokeBorder(subscription.colorHex == "#FFFFFF" ? .secondary : Color.clear)
+        .strokeBorder(subscription.colorHex == nil ? .secondary : Color.clear)
         .background(
           RoundedRectangle(cornerRadius: 6)
-          .foregroundColor(Color(hex: subscription.colorHex))
+            .foregroundColor(subscription.colorHex == nil ? Color(uiColor: .systemBackground) : Color(hex: subscription.colorHex!))
         )
     }
   }

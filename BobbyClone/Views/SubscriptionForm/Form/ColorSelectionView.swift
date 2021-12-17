@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorSelectionView: View {
   
-  @Binding var selectedColorHex: String
+  @Binding var selectedColorHex: String?
   
   @Environment(\.dismiss) private var dismissColorSelectionView
   
@@ -29,6 +29,17 @@ struct ColorSelectionView: View {
                 .padding()
             }
           }
+          Button(action: { selectColorAndDismiss(colorHex: nil) }) {
+            Circle()
+              .frame(width: 50, height: 50)
+              .foregroundColor(Color(uiColor: .systemBackground))
+              .padding()
+              .overlay(
+                Circle()
+                  .strokeBorder(.primary, lineWidth: 2)
+                  .frame(width: 50, height: 50)
+              )
+          }
         }
         .padding()
       }
@@ -45,7 +56,7 @@ struct ColorSelectionView: View {
     }
   }
   
-  private func selectColorAndDismiss(colorHex: String) {
+  private func selectColorAndDismiss(colorHex: String?) {
     selectedColorHex = colorHex
     dismissColorSelectionView()
   }
@@ -53,7 +64,7 @@ struct ColorSelectionView: View {
 }
 
 struct ColorSelectionView_Previews: PreviewProvider {
-  @State static var selectedColorHex = ""
+  @State static var selectedColorHex: String? = nil
   static var previews: some View {
     ColorSelectionView(selectedColorHex: $selectedColorHex)
   }

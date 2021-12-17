@@ -17,7 +17,7 @@ struct SubscriptionFormView: View {
   var body: some View {
     ZStack {
       Rectangle()
-        .foregroundColor(Color(hex: subscriptionConfig.colorHex))
+        .foregroundColor(subscriptionConfig.colorHex == nil ? Color(uiColor: .systemBackground) : Color(hex: subscriptionConfig.colorHex!))
         .ignoresSafeArea()
       ScrollView {
         VStack {
@@ -65,7 +65,7 @@ struct SubscriptionFormView: View {
               .foregroundColor(.primary)
           }
         }
-        .foregroundColor(subscriptionConfig.colorHex == "#FFFFFF" ? .black : .white)
+        .foregroundColor(subscriptionConfig.colorHex == nil ? .primary : .white)
         .padding(.horizontal)
       }
     }

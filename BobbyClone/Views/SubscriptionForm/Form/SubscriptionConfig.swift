@@ -14,7 +14,7 @@ struct SubscriptionConfig {
   var price = 0.00
   var name = ""
   var description = ""
-  var colorHex = "#FFFFFF"
+  var colorHex: String? = nil
   var firstBilling: Date? = nil
   
 }

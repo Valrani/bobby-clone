@@ -36,8 +36,8 @@ struct SubscriptionFormTopView: View {
       .padding()
       LineSeparator(color: .white)
     }
-    .foregroundColor(subscriptionConfig.colorHex == "#FFFFFF" ? .black : .white)
-    .background(Color(hex: subscriptionConfig.colorHex))
+    .foregroundColor(subscriptionConfig.colorHex == nil ? .primary : .white)
+    .background(subscriptionConfig.colorHex == nil ? Color(uiColor: .systemBackground) : Color(hex: subscriptionConfig.colorHex!))
   }
 }
 
