@@ -26,39 +26,34 @@ struct TemplatesView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      TemplatesTopView(onChangeViewDisplayed: { newValue in
-        viewDisplayed = newValue
-      })
-      ScrollView {
-        GeometryReader { gr in
-          Group {
-            HStack(spacing: 0) {
-              TemplatesTab(popularOnly: false)
-                .frame(width: gr.size.width)
-  //              .background(.red)
-              TemplatesTab(popularOnly: true)
-                .frame(width: gr.size.width)
-  //              .background(.green)
-            }
-            .offset(x: offset)
+      TemplatesTopView(viewDisplayed: $viewDisplayed)
+      GeometryReader { gr in
+        Group {
+          HStack(spacing: 0) {
+            TemplatesTab(popularOnly: false)
+              .frame(width: gr.size.width)
+            TemplatesTab(popularOnly: true)
+              .frame(width: gr.size.width)
           }
-          // Change the offset each time the viewDisplayed change.
-          .onChange(of: viewDisplayed) { newValue in
-            withAnimation {
-              offset = -CGFloat(viewDisplayed) * gr.size.width
-            }
-          }
-          // Initialize correctly the offset, depending on the viewDisplayed value.
-          .onAppear {
+          .offset(x: offset)
+        }
+        // Change the offset each time the viewDisplayed change.
+        .onChange(of: viewDisplayed) { newValue in
+          withAnimation {
             offset = -CGFloat(viewDisplayed) * gr.size.width
           }
-          // Recompute the offset if the device orientation change.
-          .onRotate { newOrientation in
-            offset = -CGFloat(viewDisplayed) * UIScreen.main.bounds.width
-          }
+        }
+        // Initialize correctly the offset, depending on the viewDisplayed value.
+        .onAppear {
+          offset = -CGFloat(viewDisplayed) * gr.size.width
+        }
+        // Recompute the offset if the device orientation change.
+        .onRotate { newOrientation in
+          offset = -CGFloat(viewDisplayed) * UIScreen.main.bounds.width
         }
       }
       .edgesIgnoringSafeArea(.horizontal)
+      TemplatesBottomView()
     }
   }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TemplatesTopView: View {
   
-  let onChangeViewDisplayed: (_ newValue: Int) -> Void
+  @Binding var viewDisplayed: Int
   
   @Environment(\.dismiss) private var dismissTemplatesView
   
@@ -24,7 +24,6 @@ struct TemplatesTopView: View {
         Spacer()
         Text("Ajouter un abonnement")
           .fontWeight(.semibold)
-          .lineLimit(1)
         Spacer()
         Button(action: {}) {
           Image(systemName: "magnifyingglass")
@@ -35,11 +34,15 @@ struct TemplatesTopView: View {
       .padding()
       HStack(spacing: 100) {
         Text("Tous")
+          .fontWeight(.bold)
+          .foregroundColor(viewDisplayed == 0 ? .primary : .secondary)
           .textCase(.uppercase)
-          .onTapGesture { onChangeViewDisplayed(0) }
+          .onTapGesture { viewDisplayed = 0 }
         Text("Populaires")
+          .fontWeight(.bold)
+          .foregroundColor(viewDisplayed == 1 ? .primary : .secondary)
           .textCase(.uppercase)
-          .onTapGesture { onChangeViewDisplayed(1) }
+          .onTapGesture { viewDisplayed = 1 }
       }
       .padding()
       LineSeparator()
@@ -48,8 +51,9 @@ struct TemplatesTopView: View {
   }
 }
 
-//struct TemplatesTopView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    TemplatesTopView()
-//  }
-//}
+struct TemplatesTopView_Previews: PreviewProvider {
+  @State static var viewDisplayed = 0
+  static var previews: some View {
+    TemplatesTopView(viewDisplayed: $viewDisplayed)
+  }
+}
