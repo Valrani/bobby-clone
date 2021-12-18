@@ -18,24 +18,25 @@ struct TemplatesTab: View {
           if template.isPopular || !popularOnly {
             HStack {
               Image(systemName: template.iconString)
-                .foregroundColor(Color(hex: template.colorHex))
+                .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
                 .font(.title)
                 .padding(.trailing, 8)
               Text(template.name)
-                .foregroundColor(Color(hex: template.colorHex))
+                .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
                 .font(.headline)
                 .fontWeight(.semibold)
               Spacer()
               Button(action: {}) {
                 Image(systemName: "plus")
-                  .foregroundColor(Color(hex: template.colorHex))
+                  .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
                   .font(.title2)
               }
             }
             .padding()
             .background(
               RoundedRectangle(cornerRadius: 6)
-                .strokeBorder(Color(hex: template.colorHex) ?? .clear)
+//                .strokeBorder(template.colorHex == nil ? Color.secondary : Color(hex: template.colorHex!))
+                .strokeBorder(Color.primary)
             )
             .padding(.horizontal)
             .padding(.vertical, 2)

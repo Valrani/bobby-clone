@@ -8,7 +8,7 @@
 import Foundation
 
 let templates = [
-  Template(name: "Apple Music", iconString: "applelogo", colorHex: "#000000", isPopular: true),
+  Template(name: "Apple Music", iconString: "applelogo", isPopular: true),
   Template(name: "Dropbox", iconString: "icloud.fill", colorHex: "#006EFF", isPopular: false),
   Template(name: "iCloud", iconString: "icloud.fill", colorHex: "#00A1FF", isPopular: false),
   Template(name: "Notion", iconString: "questionmark.square", colorHex: "#B0B0B0", isPopular: false),

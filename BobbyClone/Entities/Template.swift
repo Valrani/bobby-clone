@@ -12,10 +12,10 @@ struct Template: Identifiable {
   let id: String
   let name: String
   let iconString: String
-  let colorHex: String
+  let colorHex: String?
   let isPopular: Bool
   
-  init(name: String, iconString: String, colorHex: String, isPopular: Bool) {
+  init(name: String, iconString: String, colorHex: String? = nil, isPopular: Bool) {
     self.id = UUID().uuidString
     self.name = name
     self.iconString = iconString
