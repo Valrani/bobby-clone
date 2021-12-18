@@ -20,26 +20,26 @@ struct TemplatesTopView: View {
           Image(systemName: "chevron.down")
             .font(Font.body.weight(.semibold))
         }
+        .foregroundColor(.primary)
         Spacer()
         Text("Ajouter un abonnement")
           .fontWeight(.semibold)
           .lineLimit(1)
         Spacer()
-        Button(action: { dismissTemplatesView() }) {
+        Button(action: {}) {
           Image(systemName: "magnifyingglass")
             .font(Font.body.weight(.semibold))
         }
+        .foregroundColor(.primary)
       }
       .padding()
-      HStack {
-        Text("Go All")
+      HStack(spacing: 100) {
+        Text("Tous")
+          .textCase(.uppercase)
           .onTapGesture { onChangeViewDisplayed(0) }
-        Spacer()
-        Text("Go Popular")
+        Text("Populaires")
+          .textCase(.uppercase)
           .onTapGesture { onChangeViewDisplayed(1) }
-        Spacer()
-        Text("Go Nibba")
-          .onTapGesture { onChangeViewDisplayed(2) }
       }
       .padding()
       LineSeparator()

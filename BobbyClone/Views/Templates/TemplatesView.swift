@@ -20,82 +20,46 @@ struct TemplatesView: View {
   /// View displayed when the view appear, where the first is 0, the second is 1 etc.
   @State private var viewDisplayed = 0
   /// Number of tabs
-  private let numberOfTabs = 3
+  private let numberOfTabs = 2
   /// The offset applied to the HStack to display the correct view (computed in onAppear)
   @State private var offset: CGFloat = .nan
   
   var body: some View {
-    ScrollView {
-      // Top View
-//      HStack {
-//        Text("Go All")
-//          .onTapGesture { viewDisplayed = 0 }
-//        Spacer()
-//        Text("Go Popular")
-//          .onTapGesture { viewDisplayed = 1 }
-//        Spacer()
-//        Text("Go Nibba")
-//          .onTapGesture { viewDisplayed = 2 }
-//      }
-//      .padding()
-//      .background(.cyan)
+    VStack(spacing: 0) {
       TemplatesTopView(onChangeViewDisplayed: { newValue in
         viewDisplayed = newValue
       })
-      
-      // Main View
-      GeometryReader { gr in
-        Group {
-          HStack(spacing: 0) {
-            All()
-              .frame(width: gr.size.width)
-              .background(.red)
-            Popular()
-              .frame(width: gr.size.width)
-              .background(.green)
-            Nibba()
-              .frame(width: gr.size.width)
-              .background(.gray)
+      ScrollView {
+        GeometryReader { gr in
+          Group {
+            HStack(spacing: 0) {
+              TemplatesTab(popularOnly: false)
+                .frame(width: gr.size.width)
+  //              .background(.red)
+              TemplatesTab(popularOnly: true)
+                .frame(width: gr.size.width)
+  //              .background(.green)
+            }
+            .offset(x: offset)
           }
-          .offset(x: offset)
-        }
-        // Change the offset each time the viewDisplayed change.
-        .onChange(of: viewDisplayed) { newValue in
-          withAnimation {
+          // Change the offset each time the viewDisplayed change.
+          .onChange(of: viewDisplayed) { newValue in
+            withAnimation {
+              offset = -CGFloat(viewDisplayed) * gr.size.width
+            }
+          }
+          // Initialize correctly the offset, depending on the viewDisplayed value.
+          .onAppear {
             offset = -CGFloat(viewDisplayed) * gr.size.width
           }
-        }
-        // Initialize correctly the offset, depending on the viewDisplayed value.
-        .onAppear {
-          offset = -CGFloat(viewDisplayed) * gr.size.width
-        }
-        // Recompute the offset if the device orientation change.
-        .onRotate { newOrientation in
-          offset = -CGFloat(viewDisplayed) * UIScreen.main.bounds.width
+          // Recompute the offset if the device orientation change.
+          .onRotate { newOrientation in
+            offset = -CGFloat(viewDisplayed) * UIScreen.main.bounds.width
+          }
         }
       }
+      .edgesIgnoringSafeArea(.horizontal)
     }
-    .edgesIgnoringSafeArea(.horizontal)
-  }
-}
-
-struct All: View {
-  var body: some View {
-    Text("All")
-      .font(.title)
-  }
-}
-struct Popular: View {
-  var body: some View {
-    Text("Popular")
-      .font(.title)
-  }
-}
-
-struct Nibba: View {
-  var body: some View {
-    Text("Nibba")
-      .font(.title)
   }
 }
 
