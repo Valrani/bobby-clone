@@ -49,7 +49,7 @@ struct ColorSelectionView: View {
         ToolbarItem(placement: .navigationBarLeading) {
           Button(action: { dismissColorSelectionView() }) {
             Image(systemName: "chevron.down")
-              .foregroundColor(.primary)
+              .foregroundColor(.secondary)
           }
         }
       }
