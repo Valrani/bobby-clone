@@ -20,33 +20,37 @@ struct TemplatesTab: View {
             NavigationLink(destination: SubscriptionCreationView(isShowingSubscriptionTemplatesSheet: $isShowingSubscriptionTemplatesSheet, template: template)) {
               HStack {
                 Image(systemName: template.iconString)
-                  .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
+                  .foregroundColor(getBorderColor(colorHex: template.colorHex) ?? .primary)
                   .font(.title)
                   .padding(.trailing, 8)
                 Text(template.name)
-                  .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
+                  .foregroundColor(getBorderColor(colorHex: template.colorHex) ?? .primary)
                   .font(.headline)
                   .fontWeight(.semibold)
                 Spacer()
                 Image(systemName: "plus")
-                  .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
+                  .foregroundColor(getBorderColor(colorHex: template.colorHex) ?? .primary)
                   .font(.title2)
               }
               .padding()
-              .background(
-                RoundedRectangle(cornerRadius: 6)
-                  .strokeBorder(Color.primary)
+              .overlay(
+                  RoundedRectangle(cornerRadius: 6)
+                    .strokeBorder(getBorderColor(colorHex: template.colorHex) ?? .primary)
               )
               .padding(.horizontal)
               .padding(.vertical, 2)
             }
-            
           }
         }
       }
       .padding(.vertical, 12)
     }
   }
+  
+  private func getBorderColor(colorHex: String?) -> Color? {
+    return colorHex == nil ? nil : Color(hex: colorHex!)
+  }
+  
 }
 
 struct TemplatesTab_Previews: PreviewProvider {
