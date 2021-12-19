@@ -46,19 +46,19 @@ struct SubscriptionFormView: View {
                 TextField("Entrer un nom", text: $subscriptionConfig.name)
                   .multilineTextAlignment(.trailing)
               }
-              LineSeparator(color: .white)
+              LineSeparator(color: subscriptionConfig.colorHex == nil ? Color.primary : Color.white)
                 .padding(.bottom, 4)
               HStack {
                 Text("Description")
                 TextField("Entrer une description", text: $subscriptionConfig.description)
                   .multilineTextAlignment(.trailing)
               }
-              LineSeparator(color: .white)
+              LineSeparator(color: subscriptionConfig.colorHex == nil ? Color.primary : Color.white)
                 .padding(.bottom, 4)
               OptionalDatePicker(selection: $subscriptionConfig.firstBilling, range: ...Date(), displayedComponents: .date, prompt: "Entrer une date") {
                 Text("Première facturation")
               }
-              LineSeparator(color: .white)
+              LineSeparator(color: subscriptionConfig.colorHex == nil ? Color.primary : Color.white)
                 .padding(.bottom, 4)
             }
             Group {
@@ -74,7 +74,7 @@ struct SubscriptionFormView: View {
                 ColorSelectionView(selectedColorHex: $subscriptionConfig.colorHex)
                   .foregroundColor(.primary)
               }
-              LineSeparator(color: .white)
+              LineSeparator(color: subscriptionConfig.colorHex == nil ? Color.primary : Color.white)
                 .padding(.bottom, 4)
               Button(action: toggleBillingCyclePicker) {
                 HStack {
