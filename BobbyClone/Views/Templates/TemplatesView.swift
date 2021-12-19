@@ -30,9 +30,13 @@ struct TemplatesView: View {
       GeometryReader { gr in
         Group {
           HStack(spacing: 0) {
-            TemplatesTab(popularOnly: false)
+            TemplatesTab(popularOnly: false, onCreateSubscription: { template in
+              print("creating subscription with template \(template.name)...")
+            })
               .frame(width: gr.size.width)
-            TemplatesTab(popularOnly: true)
+            TemplatesTab(popularOnly: true, onCreateSubscription: { template in
+              print("creating subscription with template \(template.name)...")
+            })
               .frame(width: gr.size.width)
           }
           .offset(x: offset)
@@ -53,7 +57,9 @@ struct TemplatesView: View {
         }
       }
       .edgesIgnoringSafeArea(.horizontal)
-      TemplatesBottomView()
+      TemplatesBottomView(onCreateSubscription: {
+        print("creating subscription without template...")
+      })
     }
   }
 }

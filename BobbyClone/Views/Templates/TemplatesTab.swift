@@ -10,6 +10,7 @@ import SwiftUI
 struct TemplatesTab: View {
   
   let popularOnly: Bool
+  let onCreateSubscription: (_ template: Template) -> Void
   
   var body: some View {
     ScrollView {
@@ -26,7 +27,7 @@ struct TemplatesTab: View {
                 .font(.headline)
                 .fontWeight(.semibold)
               Spacer()
-              Button(action: {}) {
+              Button(action: { onCreateSubscription(template) }) {
                 Image(systemName: "plus")
                   .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
                   .font(.title2)
@@ -51,8 +52,12 @@ struct TemplatesTab: View {
 struct TemplatesTab_Previews: PreviewProvider {
   static var previews: some View {
     Group {
-      TemplatesTab(popularOnly: true)
-      TemplatesTab(popularOnly: false)
+      TemplatesTab(popularOnly: true, onCreateSubscription: { template in
+        print("creating subscription with template \(template.name)...")
+      })
+      TemplatesTab(popularOnly: false, onCreateSubscription: { template in
+        print("creating subscription with template \(template.name)...")
+      })
     }
   }
 }

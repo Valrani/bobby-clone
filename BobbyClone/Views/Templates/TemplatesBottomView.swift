@@ -9,11 +9,13 @@ import SwiftUI
 
 struct TemplatesBottomView: View {
   
+  let onCreateSubscription: () -> Void
+  
   var body: some View {
     VStack(spacing: 0) {
       LineSeparator()
         .padding(.bottom)
-      Button(action: {}) {
+      Button(action: onCreateSubscription) {
         HStack {
           Spacer()
           Text("Créer un abonnement personnalisé")
@@ -33,6 +35,8 @@ struct TemplatesBottomView: View {
 
 struct TemplatesBottomView_Previews: PreviewProvider {
   static var previews: some View {
-    TemplatesBottomView()
+    TemplatesBottomView(onCreateSubscription: {
+      print("creating subscription...")
+    })
   }
 }
