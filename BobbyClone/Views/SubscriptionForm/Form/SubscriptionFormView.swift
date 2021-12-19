@@ -94,14 +94,15 @@ struct SubscriptionFormView: View {
             Button(action: showDeleteConfirmationDialog) {
               Text("Supprimer Abonnement")
                 .textCase(.uppercase)
+                .opacity(0.6)
                 .foregroundColor(subscriptionConfig.colorHex == nil ? .primary : .white)
-                .padding(32)
             }
-            .confirmationDialog("Voulez-vous vraiment supprimer ?", isPresented: $isShowingDeleteConfirmationDialog) {
+            .padding(32)
+            .confirmationDialog("Delete subscription confirmation dialog", isPresented: $isShowingDeleteConfirmationDialog) {
               Button("Supprimer \(subscriptionConfig.name)", role: .destructive, action: onDelete)
               Button("Annuler", role: .cancel) {}
             } message: {
-              Text("Voulez-vous vraiment supprimer ?")
+              Text("Cette action est irréversible.")
             }
           }
         }
