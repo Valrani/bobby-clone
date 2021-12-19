@@ -19,6 +19,7 @@
 		592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C72763D56100ACF752 /* TimeUnit.swift */; };
 		592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */; };
 		592B99CC2763E25D00ACF752 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B99CB2763E25D00ACF752 /* Template.swift */; };
+		59695FDC276FAF2F00E8F921 /* ChevronOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59695FDB276FAF2F00E8F921 /* ChevronOrientation.swift */; };
 		596AC09727651D3400AA0BB6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09627651D3400AA0BB6 /* SettingsView.swift */; };
 		596AC09927651DFD00AA0BB6 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09827651DFD00AA0BB6 /* CategoriesView.swift */; };
 		596AC09D276530C400AA0BB6 /* SubscriptionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */; };
@@ -63,6 +64,7 @@
 		592B99C72763D56100ACF752 /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
 		592B99C92763DCB600ACF752 /* ColorFromHexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFromHexadecimal.swift; sourceTree = "<group>"; };
 		592B99CB2763E25D00ACF752 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		59695FDB276FAF2F00E8F921 /* ChevronOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronOrientation.swift; sourceTree = "<group>"; };
 		596AC09627651D3400AA0BB6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		596AC09827651DFD00AA0BB6 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		596AC09C276530C400AA0BB6 /* SubscriptionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCellView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				592B99CB2763E25D00ACF752 /* Template.swift */,
 				599C9F69276931EE004C0639 /* SubscriptionConfig.swift */,
 				59278153276D32750047DEB9 /* FormState.swift */,
+				59695FDB276FAF2F00E8F921 /* ChevronOrientation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				59D2DF1F27648E0C000ED604 /* DateStartOfDay.swift in Sources */,
 				59A0CF2D2769FF4000599973 /* IconSelectionView.swift in Sources */,
 				59B5B898276CA6B600D46798 /* DecimalField.swift in Sources */,
+				59695FDC276FAF2F00E8F921 /* ChevronOrientation.swift in Sources */,
 				592B99C82763D56100ACF752 /* TimeUnit.swift in Sources */,
 				59C33BE0276620AA00CD00E0 /* HomeTopView.swift in Sources */,
 				592B99CA2763DCB600ACF752 /* ColorFromHexadecimal.swift in Sources */,

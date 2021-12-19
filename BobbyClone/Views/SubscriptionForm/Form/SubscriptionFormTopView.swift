@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SubscriptionFormTopView: View {
   
+  var chevron: ChevronOrientation = .down
   @Binding var subscriptionConfig: SubscriptionConfig
   let onSave: () -> Void
   
@@ -19,7 +20,7 @@ struct SubscriptionFormTopView: View {
     VStack(spacing: 0) {
       HStack {
         Button(action: { dismissSubscriptionEditionView() }) {
-          Image(systemName: "chevron.down")
+          Image(systemName: chevron.rawValue)
             .font(Font.body.weight(.semibold))
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)

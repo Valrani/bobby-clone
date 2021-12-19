@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TemplatesTab: View {
   
+  @Binding var isShowingSubscriptionTemplatesSheet: Bool
   let popularOnly: Bool
   
   var body: some View {
@@ -16,7 +17,7 @@ struct TemplatesTab: View {
       VStack {
         ForEach(templates) { template in
           if template.isPopular || !popularOnly {
-            NavigationLink(destination: SubscriptionCreationView(template: template)) {
+            NavigationLink(destination: SubscriptionCreationView(isShowingSubscriptionTemplatesSheet: $isShowingSubscriptionTemplatesSheet, template: template)) {
               HStack {
                 Image(systemName: template.iconString)
                   .foregroundColor(template.colorHex == nil ? Color.primary : Color(hex: template.colorHex!))
@@ -49,10 +50,11 @@ struct TemplatesTab: View {
 }
 
 struct TemplatesTab_Previews: PreviewProvider {
+  @State static var showSheet = true
   static var previews: some View {
     Group {
-      TemplatesTab(popularOnly: true)
-      TemplatesTab(popularOnly: false)
+      TemplatesTab(isShowingSubscriptionTemplatesSheet: $showSheet, popularOnly: true)
+      TemplatesTab(isShowingSubscriptionTemplatesSheet: $showSheet, popularOnly: false)
     }
   }
 }

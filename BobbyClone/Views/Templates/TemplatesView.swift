@@ -34,9 +34,9 @@ struct TemplatesView: View {
         GeometryReader { gr in
           Group {
             HStack(spacing: 0) {
-              TemplatesTab(popularOnly: false)
+              TemplatesTab(isShowingSubscriptionTemplatesSheet: $isShowingSubscriptionTemplatesSheet, popularOnly: false)
                 .frame(width: gr.size.width)
-              TemplatesTab(popularOnly: true)
+              TemplatesTab(isShowingSubscriptionTemplatesSheet: $isShowingSubscriptionTemplatesSheet, popularOnly: true)
                 .frame(width: gr.size.width)
             }
             .offset(x: offset)
@@ -61,7 +61,7 @@ struct TemplatesView: View {
         VStack(spacing: 0) {
           LineSeparator()
             .padding(.bottom)
-          NavigationLink(destination: SubscriptionCreationView()) {
+          NavigationLink(destination: SubscriptionCreationView(isShowingSubscriptionTemplatesSheet: $isShowingSubscriptionTemplatesSheet)) {
             SubscriptionCreationButtonView()
           }
           .padding([.horizontal, .bottom])

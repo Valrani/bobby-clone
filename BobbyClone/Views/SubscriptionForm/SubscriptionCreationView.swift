@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SubscriptionCreationView: View {
   
+  @Binding var isShowingSubscriptionTemplatesSheet: Bool
   var template: Template?
   
   @EnvironmentObject var subscriptionLibrary: SubscriptionLibrary
@@ -16,7 +17,7 @@ struct SubscriptionCreationView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      SubscriptionFormTopView(subscriptionConfig: $subscriptionConfig, onSave: createSubscriptionAndDismiss)
+      SubscriptionFormTopView(chevron: .left, subscriptionConfig: $subscriptionConfig, onSave: createSubscriptionAndDismiss)
       SubscriptionFormView(subscriptionConfig: $subscriptionConfig, formState: .creation, onDelete: {})
     }
     .onAppear {
@@ -45,15 +46,16 @@ struct SubscriptionCreationView: View {
       billingCycleTimeUnit: subscriptionConfig.billingCycleTimeUnit
     )
     subscriptionLibrary.allSubscriptions.append(subscription)
-    UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
+    isShowingSubscriptionTemplatesSheet = false
   }
   
 }
 
 struct SubscriptionCreationView_Previews: PreviewProvider {
+  @State static var showSheet = true
   @State static var template: Template? = nil
   static var previews: some View {
-    SubscriptionCreationView(template: template)
+    SubscriptionCreationView(isShowingSubscriptionTemplatesSheet: $showSheet, template: template)
       .environmentObject(SubscriptionLibrary())
   }
 }
