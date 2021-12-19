@@ -9,14 +9,15 @@ import SwiftUI
 
 struct TemplatesTopView: View {
   
+  @Binding var isShowingSubscriptionTemplatesSheet: Bool
   @Binding var viewDisplayed: Int
   
-  @Environment(\.dismiss) private var dismissTemplatesView
+//  @Environment(\.dismiss) private var dismissTemplatesView
   
   var body: some View {
     VStack(spacing: 0) {
       HStack {
-        Button(action: { dismissTemplatesView() }) {
+        Button(action: { isShowingSubscriptionTemplatesSheet = false }) {
           Image(systemName: "chevron.down")
             .font(Font.body.weight(.semibold))
         }
@@ -52,8 +53,9 @@ struct TemplatesTopView: View {
 }
 
 struct TemplatesTopView_Previews: PreviewProvider {
+  @State static var showSheet = true
   @State static var viewDisplayed = 0
   static var previews: some View {
-    TemplatesTopView(viewDisplayed: $viewDisplayed)
+    TemplatesTopView(isShowingSubscriptionTemplatesSheet: $showSheet, viewDisplayed: $viewDisplayed)
   }
 }

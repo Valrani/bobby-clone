@@ -17,59 +17,70 @@ import SwiftUI
 /// Diminuer l'offset du HStack le fait se décaler vers la droite, ce qui permet au final d'aller faire glisser la 2eme vue etc.
 struct TemplatesView: View {
   
+  // @Environment(dismiss) is broken when used in NavigationView, so I pass the boolean the old-shool way
+  @Binding var isShowingSubscriptionTemplatesSheet: Bool
+  
   /// View displayed when the view appear, where the first is 0, the second is 1 etc.
   @State private var viewDisplayed = 0
   /// Number of tabs
   private let numberOfTabs = 2
   /// The offset applied to the HStack to display the correct view (computed in onAppear)
-  @State private var offset: CGFloat = .nan
+  @State private var offset: CGFloat = 0
   
   var body: some View {
-    VStack(spacing: 0) {
-      TemplatesTopView(viewDisplayed: $viewDisplayed)
-      GeometryReader { gr in
-        Group {
-          HStack(spacing: 0) {
-            TemplatesTab(popularOnly: false, onCreateSubscription: { template in
-              print("creating subscription with template \(template.name)...")
-            })
-              .frame(width: gr.size.width)
-            TemplatesTab(popularOnly: true, onCreateSubscription: { template in
-              print("creating subscription with template \(template.name)...")
-            })
-              .frame(width: gr.size.width)
+    NavigationView {
+      VStack(spacing: 0) {
+        TemplatesTopView(isShowingSubscriptionTemplatesSheet: $isShowingSubscriptionTemplatesSheet, viewDisplayed: $viewDisplayed)
+        GeometryReader { gr in
+          Group {
+            HStack(spacing: 0) {
+              TemplatesTab(popularOnly: false)
+                .frame(width: gr.size.width)
+              TemplatesTab(popularOnly: true)
+                .frame(width: gr.size.width)
+            }
+            .offset(x: offset)
           }
-          .offset(x: offset)
-        }
-        // Change the offset each time the viewDisplayed change.
-        .onChange(of: viewDisplayed) { newValue in
-          withAnimation {
+          // Change the offset each time the viewDisplayed change.
+          .onChange(of: viewDisplayed) { newValue in
+            withAnimation {
+              offset = -CGFloat(viewDisplayed) * gr.size.width
+            }
+          }
+          // Initialize correctly the offset, depending on the viewDisplayed value.
+          .onAppear {
             offset = -CGFloat(viewDisplayed) * gr.size.width
           }
+          // Recompute the offset if the device orientation change.
+          .onRotate { newOrientation in
+            offset = -CGFloat(viewDisplayed) * UIScreen.main.bounds.width
+          }
         }
-        // Initialize correctly the offset, depending on the viewDisplayed value.
-        .onAppear {
-          offset = -CGFloat(viewDisplayed) * gr.size.width
+        .edgesIgnoringSafeArea(.horizontal)
+        
+        VStack(spacing: 0) {
+          LineSeparator()
+            .padding(.bottom)
+          NavigationLink(destination: SubscriptionCreationView()) {
+            SubscriptionCreationButtonView()
+          }
+          .padding([.horizontal, .bottom])
         }
-        // Recompute the offset if the device orientation change.
-        .onRotate { newOrientation in
-          offset = -CGFloat(viewDisplayed) * UIScreen.main.bounds.width
-        }
+        .background(CustomColors.accentBackground)
       }
-      .edgesIgnoringSafeArea(.horizontal)
-      TemplatesBottomView(onCreateSubscription: {
-        print("creating subscription without template...")
-      })
+      .navigationBarTitle("")
+      .navigationBarHidden(true)
     }
   }
 }
 
 struct TemplatesView_Previews: PreviewProvider {
+  @State static var showSheet = true
   static var previews: some View {
     Group {
-      TemplatesView()
+      TemplatesView(isShowingSubscriptionTemplatesSheet: $showSheet)
         .previewInterfaceOrientation(.landscapeRight)
-      TemplatesView()
+      TemplatesView(isShowingSubscriptionTemplatesSheet: $showSheet)
         .previewInterfaceOrientation(.portrait)
     }
   }

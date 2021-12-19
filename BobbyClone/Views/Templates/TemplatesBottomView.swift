@@ -1,5 +1,5 @@
 //
-//  TemplatesBottomView.swift
+//  SubscriptionCreationButtonView.swift
 //  BobbyClone
 //
 //  Created by Antoine De Roose on 18/12/2021.
@@ -7,36 +7,24 @@
 
 import SwiftUI
 
-struct TemplatesBottomView: View {
-  
-  let onCreateSubscription: () -> Void
-  
+struct SubscriptionCreationButtonView: View {
   var body: some View {
-    VStack(spacing: 0) {
-      LineSeparator()
-        .padding(.bottom)
-      Button(action: onCreateSubscription) {
-        HStack {
-          Spacer()
-          Text("Créer un abonnement personnalisé")
-            .foregroundColor(.white)
-            .fontWeight(.bold)
-          Spacer()
-        }
-        .padding()
-        .background(.gray)
-        .cornerRadius(6)
-      }
-      .padding([.horizontal, .bottom])
+    HStack {
+      Spacer()
+      Text("Créer un abonnement personnalisé")
+        .foregroundColor(.white)
+        .fontWeight(.bold)
+      Spacer()
     }
-    .background(CustomColors.accentBackground)
+    .padding()
+    .background(.gray)
+    .cornerRadius(6)
   }
 }
 
-struct TemplatesBottomView_Previews: PreviewProvider {
+struct SubscriptionCreationButtonView_Previews: PreviewProvider {
   static var previews: some View {
-    TemplatesBottomView(onCreateSubscription: {
-      print("creating subscription...")
-    })
+    SubscriptionCreationButtonView()
+      .previewLayout(.sizeThatFits)
   }
 }

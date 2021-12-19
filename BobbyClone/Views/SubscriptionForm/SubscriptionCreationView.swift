@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SubscriptionCreationView: View {
   
-  @Environment(\.dismiss) private var dismissSubscriptionCreationView
+  var template: Template?
+  
   @EnvironmentObject var subscriptionLibrary: SubscriptionLibrary
   @State private var subscriptionConfig = SubscriptionConfig()
   
@@ -18,6 +19,18 @@ struct SubscriptionCreationView: View {
       SubscriptionFormTopView(subscriptionConfig: $subscriptionConfig, onSave: createSubscriptionAndDismiss)
       SubscriptionFormView(subscriptionConfig: $subscriptionConfig, formState: .creation, onDelete: {})
     }
+    .onAppear {
+      if let template = template {
+        initSubscriptionForm(template: template)
+      }
+    }
+    .navigationBarHidden(true)
+  }
+  
+  private func initSubscriptionForm(template: Template) {
+    subscriptionConfig.iconString = template.iconString
+    subscriptionConfig.name = template.name
+    subscriptionConfig.colorHex = template.colorHex
   }
   
   private func createSubscriptionAndDismiss() {
@@ -32,14 +45,15 @@ struct SubscriptionCreationView: View {
       billingCycleTimeUnit: subscriptionConfig.billingCycleTimeUnit
     )
     subscriptionLibrary.allSubscriptions.append(subscription)
-    dismissSubscriptionCreationView()
+    UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true)
   }
   
 }
 
 struct SubscriptionCreationView_Previews: PreviewProvider {
+  @State static var template: Template? = nil
   static var previews: some View {
-    SubscriptionCreationView()
+    SubscriptionCreationView(template: template)
       .environmentObject(SubscriptionLibrary())
   }
 }
