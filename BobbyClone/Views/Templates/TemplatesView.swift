@@ -66,7 +66,7 @@ struct TemplatesView: View {
           }
           .padding([.horizontal, .bottom])
         }
-        .background(CustomColors.accentBackground)
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
       }
       .navigationBarTitle("")
       .navigationBarHidden(true)

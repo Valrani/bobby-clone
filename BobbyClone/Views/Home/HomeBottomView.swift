@@ -41,7 +41,7 @@ struct HomeBottomView: View {
             .padding()
         }
       }
-      .background(CustomColors.accentBackground)
+      .background(Color(uiColor: .secondarySystemGroupedBackground))
     }
   }
   

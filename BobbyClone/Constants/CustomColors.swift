@@ -10,8 +10,6 @@ import SwiftUI
 
 enum CustomColors {
   
-  /// Pure white (light mode) or dark gray (dark mode)
-  static let accentBackground = Color("accentBackground")
   /// Light gray (light mode) or black (dark mode)
   static let accentSecondary = Color("accentSecondary")
 
